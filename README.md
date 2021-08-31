@@ -2,4 +2,5 @@
 ## Miembros del equipo
 | Nombre | Perfil | Foto |
 | -- | -- | -- |
-| Lenin Gael Rosas Saucedo | [@leningael](https://github.com/leningael)| <img src="/miembros-equipo/foto-lenin.jpg" width="100"> |
+| Lenin Gael Rosas Saucedo | [@leningael](https://github.com/leningael)| <img src="/miembros-equipo/foto-lenin.jpg" width="200"> |
+| Ana Concepción Pérez Yam | [@AnaPym](https://github.com/AnaPym)| <img src="/miembros-equipo/foto-ana.jpg" width="200"> |
