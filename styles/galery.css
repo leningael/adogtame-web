@@ -1,0 +1,30 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+html, body{
+    font-size: 16px;
+    height: 100%;
+}
+.contenedor-principal{
+    display: grid;
+    min-height: 100%;
+    grid-template-rows: max-content max-content auto max-content;
+    grid-template-areas:
+        "header header header"
+        "sidebar main main"
+        "footer footer footer";
+}
+.main{
+    grid-area: main;
+}
+.card{
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+    margin: 5px;
+    float: left;
+}
