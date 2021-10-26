@@ -18,7 +18,7 @@ turtle = {
 };
 
 window.onload = function(){
-    principalGrid = document.getElementsByClassName("main")[0];
+    principalGrid = document.getElementsByTagName("main")[0];
     addAnimals(principalGrid);
 }
 

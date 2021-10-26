@@ -15,16 +15,55 @@ html, body{
     grid-template-rows: max-content max-content auto max-content;
     grid-template-areas:
         "header header header"
+            "nav nav nav"
         "sidebar main main"
         "footer footer footer";
 }
-.main{
+header{
+    grid-area: header;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.logo-header{
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+nav{
+    grid-area: nav;
+    background-color: #ff6363;
+}
+
+.nav-list{
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.nav-item{
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: black;
+}
+
+.nav-item:hover{
+    background-color: #C84D4D;
+}
+main{
     grid-area: main;
 }
 .card{
-    width: 200px;
-    height: 200px;
+    position: relative;
+    width: 22vw;
+    height: 22vw;
     border: 1px solid black;
-    margin: 5px;
+    margin-top: 50px;
+    margin-left: 80px;
     float: left;
 }
