@@ -2,19 +2,19 @@ dog = {
     "img": "",
     "especie": "Perro",
     "nombre": "Doki",
-    "disponible": true 
+    "tamano": "grande"
 };
 cat = {
     "img": "",
     "especie": "Gato",
     "nombre": "Misho",
-    "disponible": true 
+    "tamano": "chico"
 };
 turtle = {
     "img": "",
     "especie": "Tortuga",
     "nombre": "Rafael",
-    "disponible": false 
+    "tamano": "chico"
 };
 
 window.onload = function(){

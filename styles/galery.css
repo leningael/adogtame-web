@@ -14,10 +14,11 @@ html, body{
     min-height: 100%;
     grid-template-rows: max-content max-content auto max-content;
     grid-template-areas:
-        "header header header"
-            "nav nav nav"
-        "sidebar main main"
-        "footer footer footer";
+        "header"
+        "nav"
+        "sidebar"
+        "main"
+        "footer";
 }
 header{
     grid-area: header;
@@ -28,10 +29,6 @@ header{
 }
 .logo-header{
     width: 150px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
 }
 nav{
     grid-area: nav;
@@ -55,15 +52,42 @@ nav{
 .nav-item:hover{
     background-color: #C84D4D;
 }
+.sidebar{
+    grid-area: sidebar;
+    text-align: center;
+    background-color: antiquewhite;
+    padding: 10px 0 10px 0;
+    height: 100px;
+}
 main{
     grid-area: main;
 }
 .card{
-    position: relative;
-    width: 22vw;
-    height: 22vw;
+    position: flex;
+    float: bottom;
+    text-align: center;
+    justify-items: center;
+    align-items: center;
+    width: 90vw;
+    height: 45vw;
     border: 1px solid black;
-    margin-top: 50px;
-    margin-left: 80px;
-    float: left;
+    box-shadow: 1px 1px 10px 5px rgba(0,0,0,0.2);
+    margin: 50px auto;
+    
 }
+
+footer{
+    grid-area: footer;
+    background-color: #ff6363;
+    text-align: center;
+}
+
+.info-footer{
+    display: block;
+    font-weight: bold;
+    padding: 10px;
+}
+
+/*
+@media 
+*/
