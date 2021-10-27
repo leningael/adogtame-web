@@ -98,6 +98,37 @@ main{
     width: 200px;
 }
 
+.hr{
+    width: 20%;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.preview-blog{
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+    padding: 20px;
+}
+
+.articulo{
+    background-color: white;
+    padding: 5px;
+    width: fit-content;
+    box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.25), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.imagen-articulo{
+    width: 80%;
+    height: 6.5em;
+}
+
 footer{
     grid-area: footer;
     background-color: #ff6363;
@@ -108,4 +139,15 @@ footer{
     display: block;
     font-weight: bold;
     padding: 10px;
+}
+
+.imagenes-footer-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3%;
+}
+
+.imagenes-footer{
+    width: 3%;
 }
