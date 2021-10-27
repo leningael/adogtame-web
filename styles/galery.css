@@ -12,7 +12,7 @@ html, body{
 .contenedor-principal{
     display: grid;
     min-height: 100%;
-    grid-template-rows: max-content max-content auto max-content;
+    grid-template-rows: max-content max-content max-content auto max-content;
     grid-template-areas:
         "header"
         "nav"
@@ -56,24 +56,38 @@ nav{
     grid-area: sidebar;
     text-align: center;
     background-color: antiquewhite;
-    padding: 10px 0 10px 0;
-    height: 100px;
+    padding: 10px;
+    min-height: 100px;
 }
 main{
     grid-area: main;
 }
+
+
+#catalogo{
+    display: grid;
+    margin: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
 .card{
-    position: flex;
-    float: bottom;
-    text-align: center;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    box-shadow: 1px 1px 10px 5px rgba(0,0,0,0.2);
+    align-items: center;
+    /*text-align: center;
     justify-items: center;
     align-items: center;
     width: 90vw;
     height: 45vw;
-    border: 1px solid black;
-    box-shadow: 1px 1px 10px 5px rgba(0,0,0,0.2);
-    margin: 50px auto;
-    
+    margin: 50px auto;*/
+}
+
+.card img{
+    width: 100%;
 }
 
 footer{
@@ -88,6 +102,18 @@ footer{
     padding: 10px;
 }
 
-/*
-@media 
-*/
+@media (min-width: 800px) {
+    .contenedor-principal{
+        grid-template-columns: 25% auto;
+        grid-template-rows: max-content max-content auto max-content;
+        grid-template-areas:
+        "header header"
+        "nav nav"
+        "sidebar main"
+        "footer footer";
+    }
+
+    #catalogo{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
