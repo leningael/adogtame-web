@@ -77,6 +77,10 @@ main{
     margin: 0 auto;
 }
 
+.divContenidoDerecho  h1{
+   color: #ff6363; 
+}
+
 .formulario{
     text-align: left;
     width: 300px;
@@ -97,6 +101,18 @@ main{
     border: none;
     border-bottom: 1px solid rgb(85, 82, 82);
     outline: none;
+}
+
+.formulario .sendButton{
+    text-align: center;
+}
+
+.sendButton button{
+    border-radius: 5px;
+    border: none;
+    height: 35px;
+    width: 300px;
+    background-color: rgb(236, 190, 180);
 }
 
 footer{
