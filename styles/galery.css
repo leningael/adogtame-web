@@ -101,7 +101,7 @@ footer{
     position: relative;
     width: 100%;
     opacity: 0;
-    transition: opacity 0.5 linear 1s;
+    transition: opacity 0.5s linear 1s;
   }
 .grid.imagenes-cargadas{
     opacity: 1;
@@ -112,13 +112,13 @@ footer{
     padding: 0;
     margin: 10px;
     width: calc(33.333333% - 20px);
-    box-shadow: 1px 1px 10px 5px rgba(0,0,0,0.2);
-    cursor: pointer;
-    border: 1px solid black;
 }
 .grid .item-contenido{
     position: relative;
     text-align: center;
+    box-shadow: 1px 1px 10px 5px rgba(0,0,0,0.2);
+    cursor: pointer;
+    border: 1px solid black;
 }
 .grid .item img{
     width: 100%;
