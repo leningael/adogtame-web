@@ -82,13 +82,21 @@ main{
 
 .card img{
     width: 100%;
-} 
+}
 
 
 footer{
     grid-area: footer;
     background-color: #ff6363;
     text-align: center;
+}
+
+.imagenes-footer-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    margin: 10px 0 0 0;
 }
 
 .info-footer{
