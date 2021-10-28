@@ -112,7 +112,7 @@ main{
     border: none;
     border-bottom: 1px solid rgb(85, 82, 82);
     outline: none;
-    resize: horizontal;
+    resize: vertical;
 }
 
 #formulario .sendButton{
@@ -137,6 +137,14 @@ footer{
     grid-area: footer;
     background-color: #ff6363;
     text-align: center;
+}
+
+.imagenes-footer-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    margin: 10px 0 0 0;
 }
 
 .info-footer{
