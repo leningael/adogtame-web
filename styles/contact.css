@@ -83,7 +83,8 @@ main{
     order: 1;
     width: 90%;
     text-align: center;
-    margin: 0 auto;
+    border-radius: 5px;
+    border: 1px solid rgb(105, 97, 97);
 }
 
 .divContenidoDerecho  h1{
@@ -117,6 +118,7 @@ main{
 }
 
 .sendButton button{
+    font-size: 15px;
     border-radius: 5px;
     border: none;
     height: 35px;
