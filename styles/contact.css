@@ -62,17 +62,26 @@ main{
 
 .contenido{
     display: flex;
-    margin: 5px 50px;
-   
+    flex-direction: column;
+    margin: 10px 10px;
     align-items: center;
+    gap: 20px;
 }
-.contenido img {
+
+.contenedorImagen{
+    order: 2;
     flex: 1;
-    height: 600px;
+}
+
+.contenido img {
+    width: 100%;
+    max-width: 500px;
+    max-height: 600px;
 }
 
 .divContenidoDerecho {
-    flex: 1;
+    order: 1;
+    width: 90%;
     text-align: center;
     margin: 0 auto;
 }
@@ -83,12 +92,12 @@ main{
 
 .formulario{
     text-align: left;
-    width: 300px;
+    width: 80%;
     margin: 0 auto;
 }
 
 .formulario input {
-    width: 300px;
+    width: 100%;
     height: 25px;
     border: none;
     border-bottom: 1px solid rgb(85, 82, 82);
@@ -96,7 +105,7 @@ main{
 }
 
 .formulario textarea{
-    width: 300px;
+    width: 100%;
     height: 130px;
     border: none;
     border-bottom: 1px solid rgb(85, 82, 82);
@@ -111,7 +120,7 @@ main{
     border-radius: 5px;
     border: none;
     height: 35px;
-    width: 300px;
+    width: 80%;
     background-color: rgb(236, 190, 180);
 }
 
@@ -125,4 +134,26 @@ footer{
     display: block;
     font-weight: bold;
     padding: 10px;
+}
+
+@media (min-width: 800px){
+    .contenido{
+        display: flex;
+        flex-direction: row;
+        margin: 10px 20px;
+    }
+
+    .contenido img {
+        flex: 1;
+        order: 1;
+    }
+
+    .divContenidoDerecho {
+        flex: 1;
+        order: 2;
+    }
+
+    .contenido img {
+        max-width: 100%;
+    }
 }
