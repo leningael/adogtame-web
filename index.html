@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Adogtame</title>
   <link rel="stylesheet" href="styles/homepage.css">
+  <script src="scripts/homepage.js"></script>
 </head>
 <body>
   <div class="contenedor-principal">
@@ -22,8 +23,34 @@
       </ul>
     </nav>
     <main>
-      <div class="carrusel">
+      <div class="carrusel-contenedor">
+        <div class="carrusel-slides fade">
+          <div class="texto-numero">1 / 3</div>
+          <img src="img/articulo1.jpg" style="width: 100%;" alt="Imagen carrusel">
+          <div class="carrusel-texto">DEMO 1</div>
+        </div>
 
+        <div class="carrusel-slides fade">
+          <div class="texto-numero">2 / 3</div>
+          <img src="img/articulo2.png" style="width: 100%;" alt="Imagen carrusel">
+          <div class="carrusel-texto">DEMO 2</div>
+        </div>
+
+        <div class="carrusel-slides fade">
+          <div class="texto-numero">3 / 3</div>
+          <img src="img/articulo3.jpg" style="width: 100%;" alt="Imagen carrusel">
+          <div class="carrusel-texto">DEMO 3</div>
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      </div>
+      <br>
+
+      <div style="text-align:center">
+        <span class="puntos" onclick="currentSlide(1)"></span>
+        <span class="puntos" onclick="currentSlide(2)"></span>
+        <span class="puntos" onclick="currentSlide(3)"></span>
       </div>
       <section class="busqueda">
         <div class="formBusqueda">
