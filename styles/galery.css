@@ -1,0 +1,143 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+html, body{
+    font-size: 16px;
+    height: 100%;
+}
+.contenedor-principal{
+    display: grid;
+    min-height: 100%;
+    grid-template-rows: max-content max-content max-content auto max-content;
+    grid-template-areas:
+        "header"
+        "nav"
+        "sidebar"
+        "main"
+        "footer";
+}
+header{
+    grid-area: header;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.logo-header{
+    width: 150px;
+}
+nav{
+    grid-area: nav;
+    background-color: #ff6363;
+}
+
+.nav-list{
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.nav-item{
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: black;
+}
+
+.nav-item:hover{
+    background-color: #C84D4D;
+}
+.sidebar{
+    grid-area: sidebar;
+    text-align: center;
+    background-color: antiquewhite;
+    padding: 10px;
+    min-height: 100px;
+}
+main{
+    grid-area: main;
+}
+
+
+#catalogo{
+    display: grid;
+    margin: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.card{
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    box-shadow: 1px 1px 10px 5px rgba(0,0,0,0.2);
+    align-items: center;
+}
+
+.card img{
+    width: 100%;
+} 
+
+
+footer{
+    grid-area: footer;
+    background-color: #ff6363;
+    text-align: center;
+}
+
+.info-footer{
+    display: block;
+    font-weight: bold;
+    padding: 10px;
+}
+/* Estilos de grid muuri*/
+.grid {
+    position: relative;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.5s linear 1s;
+  }
+.grid.imagenes-cargadas{
+    opacity: 1;
+}
+.grid .item{
+    position: absolute;
+    display: block;
+    padding: 0;
+    margin: 10px;
+    width: calc(33.333333% - 20px);
+}
+.grid .item-contenido{
+    position: relative;
+    text-align: center;
+    box-shadow: 1px 1px 10px 5px rgba(0,0,0,0.2);
+    cursor: pointer;
+    border: 1px solid black;
+}
+.grid .item img{
+    width: 100%;
+    cursor: pointer;
+    vertical-align: top;
+}
+/* */
+@media (min-width: 800px) {
+    .contenedor-principal{
+        grid-template-columns: 25% auto;
+        grid-template-rows: max-content max-content auto max-content;
+        grid-template-areas:
+        "header header"
+        "nav nav"
+        "sidebar main"
+        "footer footer";
+    }
+
+    #catalogo{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

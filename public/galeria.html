@@ -2,9 +2,42 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Galeria</title>
+    <link rel="stylesheet" href="../styles/galery.css">
+   
+    
 </head>
 <body>
-
+    <div class="contenedor-principal">
+        <header>
+            <img src="../img/logo.svg" alt="Logo perro y gato" class="logo-header">
+            <h1>ADOGTAME</h1>
+        </header>
+        <nav>
+            <ul class="nav-list">
+              <li><a href="#" class="nav-item">Contacto</a></li>
+              <li><a href="#" class="nav-item">Blog</a></li>
+              <li><a href="#" class="nav-item">Galer&iacute;a</a></li>
+              <li><a href="#" class="nav-item">Registro</a></li>
+              <li><a href="#" class="nav-item">Nosotros</a></li>
+            </ul>
+          </nav>
+          <div class="sidebar">
+              <h1>Filters</h1>
+              <form action="">
+                  <input type="text" class="barra-busqueda" id="barra-busqueda" placeholder="Buscar">
+              </form>
+          </div>
+        <main>
+            <div class="grid" id="grid">  
+            </div>
+        </main>
+        <footer>
+            <span class="info-footer">Hecho con &#128150; por las mascotas</span>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/web-animations-js@2.3.2/web-animations.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/muuri@0.9.5/dist/muuri.min.js"></script>
+    <script src="../scripts/galeria.js"></script>
 </body>
 </html>
