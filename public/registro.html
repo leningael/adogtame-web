@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Registro</title>
     <link rel="stylesheet" href="../styles/registration.css">
+    <script src="../scripts/registro.js"></script>
 </head>
 <body>
     <div class="contenedor-principal">
@@ -40,10 +41,10 @@
                         <br><label for="peso">Peso</label>
                         <p><input type="number" name="peso-mascota" id="peso-mascota" placeholder="Escribe el peso de tu mascota (en kg)"></p>
                         <br><label for="tamaño-mascota">Tamaño:</label>
-                        <select name="tamaño-mascota" id="tamaño-mascota" required>
-                            <option value="tamaño-grande">Grande</option>
-                            <option value="tamaño-mediano">Mediano</option>
-                            <option value="tamaño-chico">Chico</option>
+                        <select name="tamanio-mascota" id="tamanio-mascota" required>
+                            <option value="tamanio-grande">Grande</option>
+                            <option value="tamanio-mediano">Mediano</option>
+                            <option value="tamanio-chico">Chico</option>
                         </select>
                         <br>
                         <br><label for="especie-mascota">Especie:</label>
@@ -55,9 +56,9 @@
                         <p><input type="text" name="raza-mascota" id="raza-mascota" placeholder="Escribe la raza de tu mascota"></p>
                         <br><label for="imagen-mascota">Imagen</label>
                         <p><input type="text" name="imagen-mascota" id="imagen-mascota" placeholder="Introduce el url de una imagen de tu mascota" required></p>
-                        <br><label for="descripción">Descripción</label>
-                        <br><p><textarea name="descripción" id="descripción" placeholder="Escribe una descripción de tu mascota"></textarea></p>
-                        <br><p class="sendButton"><button type="submit" name="enviar" id="enviar">Enviar</button></p>
+                        <br><label for="descripcion-mascota">Descripción</label>
+                        <br><p><textarea name="descripcion-mascota" id="descripcion-mascota" placeholder="Escribe una descripción de tu mascota"></textarea></p>
+                        <br><p class="sendButton"><button type="button" name="enviar" id="enviar">Enviar</button></p>
                     </form>
                 </div>
                 <div class="contenedorImagen">
