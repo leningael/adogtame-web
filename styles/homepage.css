@@ -141,19 +141,16 @@ footer{
     text-align: center;
 }
 
-.info-footer{
-    display: block;
-    font-weight: bold;
-    padding: 10px;
-}
-
 .imagenes-footer-wrapper{
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 3%;
+    gap: 40px;
+    margin: 10px 0 0 0;
 }
 
-.imagenes-footer{
-    width: 3%;
+.info-footer{
+    display: block;
+    font-weight: bold;
+    padding: 10px;
 }
