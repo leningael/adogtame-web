@@ -83,7 +83,8 @@ main{
     order: 1;
     width: 90%;
     text-align: center;
-    border-radius: 5px;
+    border-radius: 10px;
+    padding: 50px 0;
     border: 1px solid rgb(105, 97, 97);
 }
 
@@ -111,6 +112,7 @@ main{
     border: none;
     border-bottom: 1px solid rgb(85, 82, 82);
     outline: none;
+    resize: horizontal;
 }
 
 .formulario .sendButton{
@@ -118,12 +120,13 @@ main{
 }
 
 .sendButton button{
-    font-size: 15px;
+    font-size: 17px;
     border-radius: 5px;
     border: none;
     height: 35px;
-    width: 80%;
+    width: 100%;
     background-color: rgb(236, 190, 180);
+    cursor: pointer;
 }
 
 footer{
