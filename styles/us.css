@@ -1,0 +1,159 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+html, body{
+    font-size: 16px;
+    height: 100%;
+}
+
+.contenedor-principal{
+    display: grid;
+    min-height: 100%;
+    grid-template-rows: max-content max-content auto max-content;
+    grid-template-areas:
+        "header"
+        "nav"
+        "main"
+        "footer";
+}
+
+header{
+    grid-area: header;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo-header{
+    width: 150px;
+}
+
+nav{
+    grid-area: nav;
+    background-color: #ff6363;
+}
+
+.nav-list{
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.nav-item{
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: black;
+}
+
+.nav-item:hover{
+    background-color: #C84D4D;
+}
+
+main{
+    grid-area: main;
+}
+
+.contenido{
+    display: flex;
+    margin: 10px 10px;
+    align-items: center;
+    gap: 20px;
+}
+
+.contenedorImagen{
+    order: 2;
+    flex: 1;
+}
+
+.contenido img {
+    width: 100%;
+    max-width: 500px;
+    max-height: 600px;
+}
+
+.divContenidoDerecho {
+    order: 1;
+    width: 90%;
+    text-align: center;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 50px 0;
+    border: 1px solid rgb(105, 97, 97);
+    font-size: 20px;
+    color: #ff6363; 
+}
+
+.divContenidoIzquierdo h1{
+    font-size: 28px;
+    color: #ff6363;
+     text-align: center;
+}
+
+.divContenidoDerecho p{
+    margin: 10px;
+    font-size: 16px;
+    height: 100%;
+    color: black;
+    text-align: center;
+    line-height: 30px;
+}
+
+.divContenidoIzquierdo{
+    padding-bottom: 50px;
+    margin: 10px;
+    font-size: 16px;
+    color: black;
+    text-align: justify;
+    margin-left: 25%;
+    margin-right: 25%;
+    line-height: 30px;
+}
+
+footer{
+    grid-area: footer;
+    background-color: #ff6363;
+    text-align: center;
+}
+
+.imagenes-footer-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    margin: 10px 0 0 0;
+}
+
+.info-footer{
+    display: block;
+    font-weight: bold;
+    padding: 10px;
+}
+
+@media (min-width: 800px){
+    .contenido{
+        display: flex;
+        flex-direction: row;
+        margin: 10px 20px;
+    }
+
+    .contenido img {
+        flex: 1;
+        order: 1;
+    }
+
+    .divContenidoDerecho {
+        flex: 1;
+        order: 2;
+    }
+
+    .contenido img {
+        max-width: 100%;
+    }
+}
