@@ -126,6 +126,16 @@ main{
     top: 0;
 }
 
+.carrusel-texto{
+    color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(0, 0, 0, 0.2);
+    margin-bottom: 150px;
+    font-size: 60px;
+    font-weight: bold;
+    letter-spacing: 20px;
+    text-align: center;
+}
+
 .puntos{
     cursor: pointer;
     height: 15px;
