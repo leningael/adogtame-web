@@ -60,6 +60,7 @@ nav{
     background-color: antiquewhite;
     padding: 10px;
     min-height: 100px;
+    border-bottom: 3px solid rgba(0,0,0,0.2);
 }
 
 .sidebar h1{
@@ -125,7 +126,7 @@ footer{
     display: block;
     padding: 0;
     margin: 10px;
-    width: calc(33.333333% - 20px);
+    width: calc(50% - 20px);
 }
 .grid .item-contenido{
     position: relative;
@@ -139,6 +140,36 @@ footer{
     cursor: pointer;
     vertical-align: top;
 }
+/* Form de filtros */
+.filtros{
+    color: black;
+}
+.filtros *{
+    margin: 5px 0;
+}
+.filtros input[type="text"]{
+    border-radius: 10px;
+    text-align: center;
+}
+.filtros input[type="radio"]{
+    margin-left: 15px;
+}
+.filtros .wrapperBtns{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: black;
+}
+.btn button{
+    font-size: 17px;
+    border-radius: 5px;
+    border: none;
+    height: 35px;
+    width: 100%;
+    background-color: rgb(236, 190, 180);
+    cursor: pointer;
+}
+
 /* */
 @media (min-width: 800px) {
     .contenedor-principal{
@@ -153,6 +184,12 @@ footer{
 
     #catalogo{
         grid-template-columns: repeat(3, 1fr);
+    }
+    .sidebar{
+        border-right: 3px solid rgba(0,0,0,0.2);
+    }
+    .grid .item{ 
+        width: calc(33.3333333% - 20px);
     }
 }
 

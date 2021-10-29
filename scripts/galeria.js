@@ -28,11 +28,34 @@ window.addEventListener('load',() =>{
     });
     grid.refreshItems().layout();
     document.getElementById("grid").classList.add('imagenes-cargadas');
-
+    //Filtrado por checkboxes
+    const radioEls = document.querySelectorAll('input[type="radio"]');
+    const btnBuscar = document.getElementById("query-buscar");
+    const btnBorrar = document.getElementById("borrar");
+    btnBuscar.addEventListener('click', (evento)=>{
+        let query = "";
+        evento.preventDefault();
+        radioEls.forEach((elemento)=>{
+            if(elemento.checked){
+                query += `${elemento.value} `;
+            }
+        });
+        grid.filter((item)=> item.getElement().dataset.etiquetas.includes(query.toLowerCase()));
+        console.log(query);
+    });
+    btnBorrar.addEventListener('click', (evento)=>{
+        evento.preventDefault();
+        grid.filter((item)=> item.getElement().dataset.etiquetas.includes(''));
+        radioEls.forEach((elemento)=>{
+            if(elemento.checked){
+                elemento.checked = false;
+            }
+        });
+    });
     //Filtrado por barra de busqueda
     document.querySelector('#barra-busqueda').addEventListener('input', (evento)=>{
         const busqueda = evento.target.value;
-        grid.filter((item)=> item.getElement().dataset.etiquetas.includes(busqueda.toLowerCase()));
+        grid.filter((item)=> item.getElement().dataset.nombres.includes(busqueda.toLowerCase()));
     })
 })
 
@@ -41,7 +64,6 @@ addAnimals = function(cont){
     animalesLista.push(dog);
     animalesLista.push(cat);
     animalesLista.push(turtle);
-    console.log(`${animalesLista[0]["nombre"]}`);
 
     animalesLista.forEach(animal => {
         const divAnimal = document.createElement("div");
@@ -49,10 +71,11 @@ addAnimals = function(cont){
         const animalImg = document.createElement("img");
         const animalSpecie = document.createElement("p");
         const animalName = document.createElement("p");
-        let etiquetas = `${animal["especie"]} ${animal["tamano"]}`;
+        let etiquetas = `${animal["especie"]} ${animal["tamano"]} `;
         etiquetas = etiquetas.toLowerCase();
         divAnimal.className = "item";
         divContent.className = "item-contenido";
+        divAnimal.setAttribute("data-nombres",`${animal["nombre"].toLowerCase()}`);
         divAnimal.setAttribute("data-etiquetas",etiquetas);
         animalImg.src = `${animal["img"]}`;
         animalSpecie.innerHTML = `Especie: ${animal["especie"]}`;
