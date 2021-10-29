@@ -5,12 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Adogtame</title>
   <link rel="stylesheet" href="styles/homepage.css">
-  <script src="scripts/homepage.js"></script>
+  <script src="scripts/darkmode.js"></script>
+  <script src="scripts/cookies.js"></script>
 </head>
 <body>
   <div class="contenedor-principal">
     <header>
-      <a href="index.html"><img src="img/logo.svg" alt="Logo perro y gato" class="logo-header"></a>
+      <a href="index.html"><img src="img/logo.png" alt="Logo perro y gato" class="logo-header"></a>
       <h1>ADOGTAME</h1>
     </header>
     <nav>
@@ -28,15 +29,15 @@
         <div class="carrusel-slides fade" id="carrusel1">
           <div class="texto-numero">1 / 3</div>
           <img src="img/carrusel1.jpg" style="width: 100%;" alt="Imagen carrusel">
-          <div class="carrusel-texto"></div>
+          <div class="carrusel-texto">GALERÍA</div>
         </div>
         </a>
 
-        <a href="public/blog.html">
+        <a href="public/nosotros.html">
         <div class="carrusel-slides fade">
           <div class="texto-numero">2 / 3</div>
           <img src="img/carrusel2.jpg" style="width: 100%;" alt="Imagen carrusel">
-          <div class="carrusel-texto"></div>
+          <div class="carrusel-texto">CONÓCENOS</div>
         </div>
         </a>
 
@@ -44,7 +45,7 @@
         <div class="carrusel-slides fade">
           <div class="texto-numero">3 / 3</div>
           <img src="img/carrusel3.jpg" style="width: 100%;" alt="Imagen carrusel">
-          <div class="carrusel-texto"></div>
+          <div class="carrusel-texto">REGISTRO</div>
         </div>
         </a>
 
@@ -71,7 +72,7 @@
           </form>
         </div>
         <div class="imagen-busqueda">
-          <img src="img/busqueda.svg" alt="Imagen con el tipo de mascotas">
+          <img src="img/busqueda.png" alt="Imagen con el tipo de mascotas">
         </div>
       </section>
       <hr>
@@ -109,7 +110,11 @@
         </a>
       </div>
       <p class="info-footer">Hecho con &#128150; por las mascotas</p>
+      <button type="button" id="darkbutton">
+        <img src="img/btnlight.svg" id="darkicon">
+      </button>
     </footer>
   </div>
+  <script src="scripts/homepage.js"></script>
 </body>
 </html>
