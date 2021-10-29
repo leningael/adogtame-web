@@ -6,76 +6,86 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog</title>
     <link rel="stylesheet" href="../styles/blog.css">
+    <script src="../scripts/darkmode.js"></script>
+    <script src="../scripts/cookies.js"></script>
 </head>
 <body>
-    <body>
-        <div class="contenedor-principal">
-            <header>
-                <a href="../index.html"><img src="../img/logo.svg" alt="Logo perro y gato" class="logo-header"></a>
-                <h1>ADOGTAME</h1>
-            </header>
-            <nav>
-                <ul class="nav-list">
-                    <li><a href="contacto.html" class="nav-item">Contacto</a></li>
-                    <li><a href="blog.html" class="nav-item">Blog</a></li>
-                    <li><a href="galeria.html" class="nav-item">Galer&iacute;a</a></li>
-                    <li><a href="registro.html" class="nav-item">Registro</a></li>
-                    <li><a href="nosotros.html" class="nav-item">Nosotros</a></li>
-                </ul>
-            </nav>
-            <main>
-                <div class="contenedorImagen">
-                    <p class="TextoImagen">Bienvenido al blog</p>
-                    <img src="../img/perroLector.jpeg">
-                </div>
-                <div class="divForm">
-                    <h1>Buscar</h1><br>
-                    <form id="formulario">
-                        <input type="text" name="busqueda" id="busqueda" placeholder="Buscar...">
-                        <select name="tamanio-mascota" id="tamanio-mascota" required>
-                            <option value="donaciones">Donaciones</option>
-                            <option value="campanias">Campañas</option>
-                            <option value="tips">Tips</option>
-                            <option value="foros">Foros</option>
-                        </select>
-                        <br><p class="sendButton"><button type="submit" name="enviar" id="enviar">Buscar</button></p>
-                    </form>
-                </div>
-                <section class="preview-blog">
-                    <a href="public/articulo1.html">
-                        <article class="articulo">
-                            <img class="imagen-articulo" src="https://perro.shop/wp-content/uploads/pug.jpg" alt="Imagen Articulo 1">
-                            <p class="titulo-articulo">10 consejos para cuidar a tu cachorro</p>
-                        </article>
-                    </a>
-                    <a href="public/articulo2.html">
-                        <article class="articulo">
-                            <img class="imagen-articulo" src="https://www.purina-latam.com/sites/g/files/auxxlc391/files/styles/social_share_large/public/01_%C2%BFQu%C3%A9-puedo-hacer-si-mi-gato-est%C3%A1-triste-.png?itok=w67Nhubc" alt="Imagen Articulo 2">
-                            <p class="titulo-articulo">¿Cómo interpretar a tu gatito?</p>
-                        </article>
-                    </a>
-                    <a href="public/articulo3.html">
-                        <article class="articulo">
-                        <img class="imagen-articulo" src="http://static.ella-hoy.es/r/845X0/www.ella-hoy.es/img/perrogat.jpg" alt="Imagen Articulo 3">
-                        <p class="titulo-articulo">Aspectos a considerar antes de adoptar</p>
-                        </article>
-                    </a>
-                </section>
-            </main>
-            <footer>
-                <div class="imagenes-footer-wrapper">
-                  <a href="https://www.facebook.com/">
+    <div class="contenedor-principal">
+        <header>
+            <a href="../index.html"><img src="../img/logo.png" alt="Logo perro y gato" class="logo-header"></a>
+            <h1>ADOGTAME</h1>
+        </header>
+        <nav>
+            <ul class="nav-list">
+                <li><a href="contacto.html" class="nav-item">Contacto</a></li>
+                <li><a href="blog.html" class="nav-item">Blog</a></li>
+                <li><a href="galeria.html" class="nav-item">Galer&iacute;a</a></li>
+                <li><a href="registro.html" class="nav-item">Registro</a></li>
+                <li><a href="nosotros.html" class="nav-item">Nosotros</a></li>
+            </ul>
+        </nav>
+        <main>
+            <div class="contenedorImagen">
+                <p class="textoImagen">Bienvenido al blog</p>
+                <img src="../img/perroLector.jpeg">
+            </div>
+            <div class="divForm">
+                <h1>Buscar</h1>
+                <form id="formulario">
+                    <input type="text" name="busqueda" id="busqueda" placeholder="Buscar...">
+                    <select name="tamanio-mascota" id="tamanio-mascota" required>
+                        <option value="donaciones">Donaciones</option>
+                        <option value="campanias">Campañas</option>
+                        <option value="tips">Tips</option>
+                        <option value="foros">Foros</option>
+                    </select>
+                    <button type="submit" name="enviar" id="enviar" class="btnArticulos">Buscar</button>
+                </form>
+            </div>
+            <section class="lista-articulos">
+                <article class="articulo-blog">
+                    <img src="https://www.purina-latam.com/sites/g/files/auxxlc391/files/styles/social_share_large/public/01_%C2%BFQu%C3%A9-puedo-hacer-si-mi-gato-est%C3%A1-triste-.png?itok=w67Nhubc" alt="">
+                    <div class="info-articulo">
+                        <h3>¿Cómo interpretar a tu gatito?</h3>
+                        <p>En cuanto entiendas los aspectos básicos del comportamiento de tu gato, podrás interpretar rápidamente cómo se siente. Si estás intentando entender el comportamiento de tu gato, ¡nuestra guía te explicará todo lo que necesitas saber para hablar el idioma de los gatos!</p>
+                        <button type="button" class="btnArticulos">Leer articulo</button>
+                    </div>
+                </article>
+                <article class="articulo-blog">
+                    <img src="http://static.ella-hoy.es/r/845X0/www.ella-hoy.es/img/perrogat.jpg" alt="">
+                    <div class="info-articulo">
+                        <h3>Aspectos a considerar antes de adoptar</h3>
+                        <p>Estás pensando en adoptar una mascota? Estos son algunos de los aspectos que debes de considerar antes de dar el paso.</p>
+                        <button type="button" class="btnArticulos">Leer articulo</button>
+                    </div>
+                </article>
+                <article class="articulo-blog">
+                    <img src="https://perro.shop/wp-content/uploads/pug.jpg" alt="">
+                    <div class="info-articulo">
+                        <h3>10 consejos para cuidar a tu cachorro</h3>
+                        <p>Un perro nunca se cansará de recibir amor. Háblale, apapáchalo, comparte tus secretos con él y ¡cuídalo! Tu mejor amigo necesita varias cosas. Aquí te compartimos algunos consejos para cuidar a tu perro:</p>
+                        <button type="button" class="btnArticulos">Leer articulo</button>
+                    </div>
+                </article>
+            </section>
+        </main>
+        <footer>
+            <div class="imagenes-footer-wrapper">
+                <a href="https://www.facebook.com/">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12c0-5.523-4.477-10-10-10z"/></svg>
-                  </a>
-                  <a href="https://www.twitter.com/">
+                </a>
+                <a href="https://www.twitter.com/">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32"><path fill="none" d="M0 0h24v24H0z"/><path d="M22.162 5.656a8.384 8.384 0 0 1-2.402.658A4.196 4.196 0 0 0 21.6 4c-.82.488-1.719.83-2.656 1.015a4.182 4.182 0 0 0-7.126 3.814 11.874 11.874 0 0 1-8.62-4.37 4.168 4.168 0 0 0-.566 2.103c0 1.45.738 2.731 1.86 3.481a4.168 4.168 0 0 1-1.894-.523v.052a4.185 4.185 0 0 0 3.355 4.101 4.21 4.21 0 0 1-1.89.072A4.185 4.185 0 0 0 7.97 16.65a8.394 8.394 0 0 1-6.191 1.732 11.83 11.83 0 0 0 6.41 1.88c7.693 0 11.9-6.373 11.9-11.9 0-.18-.005-.362-.013-.54a8.496 8.496 0 0 0 2.087-2.165z"/></svg>
-                  </a>
-                  <a href="https://www.instagram.com/">
+                </a>
+                <a href="https://www.instagram.com/">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153a4.908 4.908 0 0 1 1.153 1.772c.247.637.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 0 1-1.153 1.772 4.915 4.915 0 0 1-1.772 1.153c-.637.247-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 0 1-1.772-1.153 4.904 4.904 0 0 1-1.153-1.772c-.248-.637-.415-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.066.217-1.79.465-2.428a4.88 4.88 0 0 1 1.153-1.772A4.897 4.897 0 0 1 5.45 2.525c.638-.248 1.362-.415 2.428-.465C8.944 2.013 9.283 2 12 2zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm6.5-.25a1.25 1.25 0 0 0-2.5 0 1.25 1.25 0 0 0 2.5 0zM12 9a3 3 0 1 1 0 6 3 3 0 0 1 0-6z"/></svg>
-                  </a>
-                </div>
-                <p class="info-footer">Hecho con &#128150; por las mascotas</p>
-            </footer>
-        </div>
+                </a>
+            </div>
+            <p class="info-footer">Hecho con &#128150; por las mascotas</p>
+            <button type="button" id="darkbutton">
+                <img src="../img/btnlight.svg" id="darkicon">
+            </button>
+        </footer>
+    </div>
 </body>
 </html>
