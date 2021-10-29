@@ -1,0 +1,208 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+html, body{
+    font-size: 16px;
+    height: 100%;
+}
+
+.contenedor-principal{
+    display: grid;
+    min-height: 100%;
+    grid-template-rows: max-content max-content auto max-content;
+    grid-template-areas:
+        "header"
+        "nav"
+        "main"
+        "footer";
+}
+
+header{
+    grid-area: header;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo-header{
+    width: 150px;
+}
+
+nav{
+    grid-area: nav;
+    background-color: #ff6363;
+}
+
+.nav-list{
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.nav-item{
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: black;
+}
+
+.nav-item:hover{
+    background-color: #C84D4D;
+}
+
+main{
+    grid-area: main;
+}
+
+.TextoImagen{
+    position: absolute;
+    width: 100%;
+    bottom: 20px;
+    color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(0, 0, 0, 0.2);
+    font-size: 60px;
+    font-weight: bold;
+    letter-spacing: 20px;
+    text-align: center;
+}
+
+.contenedorImagen{
+    width: 100%;
+    position: relative;
+    text-align: center;
+    height: 400px;
+}
+
+.contenedorImagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.divForm {
+    width: 50%;
+    text-align: center;
+    padding: 50px 0;
+    margin: 0 auto;
+}
+
+.divForm  h1{
+   color: #ff6363; 
+   text-align: center;
+}
+
+#formulario{
+    text-align: left;
+    width: 80%;
+    margin: 0 auto;
+}
+
+#formulario input {
+    width: 100%;
+    height: 25px;
+    border: none;
+    border: 2px solid rgb(85, 82, 82);
+    outline: none;
+    border-radius: 5px;
+}
+
+#formulario .sendButton{
+    text-align: center;
+}
+
+#formulario select{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 100%;
+    height: 25px;
+    border:black;
+    border: 2px solid rgb(85, 82, 82, 85);
+    border-radius: 5px;
+}
+
+.sendButton button{
+    font-size: 17px;
+    border-radius: 5px;
+    border: none;
+    height: 35px;
+    width: 100%;
+    background-color: rgb(236, 190, 180);
+    cursor: pointer;
+}
+
+.preview-blog{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+    margin: 30px 0;
+    align-items: stretch;
+}
+
+.preview-blog a{
+    width: 300px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.articulo{
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.25), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.imagen-articulo{
+    width: 100%;
+    height: 200px;
+}
+
+.titulo-articulo{
+    padding: 10px;
+}
+
+footer{
+    grid-area: footer;
+    background-color: #ff6363;
+    text-align: center;
+}
+
+.imagenes-footer-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    margin: 10px 0 0 0;
+}
+
+.info-footer{
+    display: block;
+    font-weight: bold;
+    padding: 10px;
+}
+
+@media (min-width: 800px){
+    .contenido{
+        display: flex;
+        flex-direction: column;
+        margin: 10px 20px;
+    }
+
+    .contenido img {
+        flex: 1;
+    }
+
+    .divContenidoDerecho {
+        flex: 1;
+    }
+
+    .contenido img {
+        max-width: 100%;
+    }
+}
