@@ -86,7 +86,7 @@ main{
 }
 
 .divForm {
-    width: 50%;
+    width: 80%;
     text-align: center;
     padding: 50px 0;
     margin: 0 auto;
@@ -201,6 +201,9 @@ footer{
 }
 
 @media (min-width: 700px){
+    .divForm {
+        width: 50%;
+    }
     .textoImagen{
         font-size: 60px;
     }
