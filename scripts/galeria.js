@@ -1,26 +1,25 @@
 const dog = {
-    "img": "https://images.pexels.com/photos/8863636/pexels-photo-8863636.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+    "imagen": "https://images.pexels.com/photos/8863636/pexels-photo-8863636.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
     "especie": "Perro",
     "nombre": "Doki",
-    "tamano": "grande"
+    "tamanio": "grande"
 };
 const cat = {
-    "img": "https://images.pexels.com/photos/4897323/pexels-photo-4897323.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+    "imagen": "https://images.pexels.com/photos/4897323/pexels-photo-4897323.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
     "especie": "Gato",
     "nombre": "Misho",
-    "tamano": "chico"
+    "tamanio": "chico"
 };
 const turtle = {
-    "img": "https://images.pexels.com/photos/7053881/pexels-photo-7053881.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+    "imagen": "https://images.pexels.com/photos/7053881/pexels-photo-7053881.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
     "especie": "Perro",
     "nombre": "Rafael",
-    "tamano": "chico"
+    "tamanio": "chico"
 };
 
-petsList = []
+let petsList = []
 window.addEventListener('load',() =>{
     cargarMascotas();
-
     const principalGrid = document.getElementById("grid");
     addAnimals(principalGrid);
     const grid = new Muuri('.grid', {
@@ -59,6 +58,7 @@ window.addEventListener('load',() =>{
         const busqueda = evento.target.value;
         grid.filter((item)=> item.getElement().dataset.nombres.includes(busqueda.toLowerCase()));
     })
+    grid.refreshItems();
 })
 
 addAnimals = function(cont){
@@ -70,21 +70,24 @@ addAnimals = function(cont){
         const divAnimal = document.createElement("div");
         const divContent = document.createElement("div");
         const animalImg = document.createElement("img");
+        const animalDescription = document.createElement("div");
         const animalSpecie = document.createElement("p");
         const animalName = document.createElement("p");
-        let etiquetas = `${animal["especie"]} ${animal["tamano"]} `;
+        let etiquetas = `${animal["especie"]} ${animal["tamanio"]} `;
         etiquetas = etiquetas.toLowerCase();
         divAnimal.className = "item";
         divContent.className = "item-contenido";
+        animalDescription.className = "descripcion-mascota";
         divAnimal.setAttribute("data-nombres",`${animal["nombre"].toLowerCase()}`);
         divAnimal.setAttribute("data-etiquetas",etiquetas);
-        animalImg.src = `${animal["img"]}`;
+        animalImg.src = `${animal["imagen"]}`;
         animalSpecie.innerHTML = `Especie: ${animal["especie"]}`;
         animalName.innerHTML = `Nombre: ${animal["nombre"]}`;
         divContent.appendChild(animalImg);
-        divContent.appendChild(animalSpecie);
-        divContent.appendChild(animalName);
-        divAnimal.appendChild(divContent)
+        animalDescription.appendChild(animalSpecie);
+        animalDescription.appendChild(animalName);
+        divContent.appendChild(animalDescription);
+        divAnimal.appendChild(divContent);
         cont.appendChild(divAnimal);
     });
 }

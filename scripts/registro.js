@@ -1,7 +1,6 @@
-window.onload = function(){
+document.addEventListener("DOMContentLoaded", function (){
     cargarLocalStorage();
     document.getElementById('enviar').onclick = function(){
-
         //Agarrando valores para el dueño
         const nombreDuenio = document.getElementById('nombre').value;
         const emailDuenio = document.getElementById('email').value;
@@ -19,11 +18,12 @@ window.onload = function(){
 
         const duenio = new Duenio(nombreDuenio, emailDuenio, telefonoDuenio);
         const mascota = new Mascota(nombre, edad, peso, tamanio, especie, raza, imagen, descripcion, duenio);
+        console.log(mascota);
         listaMascotas.push(mascota);
         guardarLocalStorage();
         window.location.reload(true);
     }
-}
+});
 
 function Mascota(nombre, edad, peso, tamanio, especie, raza, imagen, descripcion, duenio){
     this.nombre = nombre;
