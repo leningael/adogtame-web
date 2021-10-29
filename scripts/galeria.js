@@ -27,6 +27,7 @@ window.addEventListener('load',() =>{
             rounding: false
         }
     });
+    cargarParametros(grid);
     grid.refreshItems().layout();
     document.getElementById("grid").classList.add('imagenes-cargadas');
     //Filtrado por checkboxes
@@ -103,5 +104,13 @@ cargarMascotas = function(){
     }
     if(mascotasString){
         petsList = JSON.parse(mascotasString);
+    }
+}
+
+cargarParametros = function (grid){
+    let params = (new URL(document.location)).searchParams;
+    if(params.has("tipoMascota")){
+        const tipoMascota = params.get("tipoMascota");
+        grid.filter((item)=> item.getElement().dataset.etiquetas.includes(tipoMascota));
     }
 }
