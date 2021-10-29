@@ -90,7 +90,10 @@ main{
     padding: 50px 0;
     border: 1px solid rgb(105, 97, 97);
     font-size: 20px;
-    color: #ff6363; 
+}
+
+.divContenidoDerecho h1, h2{
+    color: #ff6363;
 }
 
 .divContenidoIzquierdo h1{
@@ -103,19 +106,16 @@ main{
     margin: 10px;
     font-size: 16px;
     height: 100%;
-    color: black;
     text-align: center;
     line-height: 30px;
 }
 
 .divContenidoIzquierdo{
+    width: 80%;
     padding-bottom: 50px;
-    margin: 10px;
+    margin: 10px auto;
     font-size: 16px;
-    color: black;
     text-align: justify;
-    margin-left: 25%;
-    margin-right: 25%;
     line-height: 30px;
 }
 
@@ -159,4 +159,30 @@ footer{
     .contenido img {
         max-width: 100%;
     }
+}
+
+/*Dark-Theme*/
+
+body{
+    color: var(--text-color);
+    background-color: var(--bg-color);
+}
+
+body{
+    --text-color: #121212;
+    --bg-color: #fff
+}
+
+body.dark-theme{
+    --text-color: #fff;
+    --bg-color: #121212;
+}
+
+#darkbutton{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
 }

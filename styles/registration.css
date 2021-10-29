@@ -171,3 +171,29 @@ footer{
         max-width: 100%;
     }
 }
+
+/*Dark-Theme*/
+
+body{
+    color: var(--text-color);
+    background-color: var(--bg-color);
+}
+
+body{
+    --text-color: #121212;
+    --bg-color: #fff
+}
+
+body.dark-theme{
+    --text-color: #fff;
+    --bg-color: #121212;
+}
+
+#darkbutton{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
