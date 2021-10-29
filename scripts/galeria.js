@@ -17,8 +17,10 @@ const turtle = {
     "tamano": "chico"
 };
 
-
+petsList = []
 window.addEventListener('load',() =>{
+    cargarMascotas();
+
     const principalGrid = document.getElementById("grid");
     addAnimals(principalGrid);
     const grid = new Muuri('.grid', {
@@ -60,12 +62,11 @@ window.addEventListener('load',() =>{
 })
 
 addAnimals = function(cont){
-    const animalesLista = [];
-    animalesLista.push(dog);
-    animalesLista.push(cat);
-    animalesLista.push(turtle);
+    petsList.push(dog);
+    petsList.push(cat);
+    petsList.push(turtle);
 
-    animalesLista.forEach(animal => {
+    petsList.forEach(animal => {
         const divAnimal = document.createElement("div");
         const divContent = document.createElement("div");
         const animalImg = document.createElement("img");
@@ -86,4 +87,18 @@ addAnimals = function(cont){
         divAnimal.appendChild(divContent)
         cont.appendChild(divAnimal);
     });
+}
+
+cargarMascotas = function(){
+    let mascotasString = "";
+    try {
+         if(localStorage.getItem('listaMascotas')){
+                mascotasString = localStorage.getItem('listaMascotas');
+        }
+    } catch (error) {
+         console.log("Error al cargar el local storage \n" + error);
+    }
+    if(mascotasString){
+        petsList = JSON.parse(mascotasString);
+    }
 }
