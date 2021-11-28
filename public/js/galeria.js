@@ -14,6 +14,32 @@ window.addEventListener('load',() =>{
             cargarParametros(grid);
             grid.refreshItems().layout();
             document.getElementById("grid").classList.add('imagenes-cargadas');
+            btnBuscar.addEventListener('click', (evento)=>{
+                let query = "";
+                evento.preventDefault();
+                radioEls.forEach((elemento)=>{
+                    if(elemento.checked){
+                        query += `${elemento.value} `;
+                    }
+                });
+                grid.filter((item)=> item.getElement().dataset.etiquetas.includes(query.toLowerCase()));
+                console.log(query);
+            });
+            btnBorrar.addEventListener('click', (evento)=>{
+                evento.preventDefault();
+                grid.filter((item)=> item.getElement().dataset.etiquetas.includes(''));
+                radioEls.forEach((elemento)=>{
+                    if(elemento.checked){
+                        elemento.checked = false;
+                    }
+                });
+            });
+            //Filtrado por barra de busqueda
+            document.querySelector('#barra-busqueda').addEventListener('input', (evento)=>{
+                const busqueda = evento.target.value;
+                grid.filter((item)=> item.getElement().dataset.nombres.includes(busqueda.toLowerCase()));
+            })
+            grid.refreshItems();
         }
     }
 
@@ -26,32 +52,7 @@ window.addEventListener('load',() =>{
     const radioEls = document.querySelectorAll('input[type="radio"]');
     const btnBuscar = document.getElementById("query-buscar");
     const btnBorrar = document.getElementById("borrar");
-    btnBuscar.addEventListener('click', (evento)=>{
-        let query = "";
-        evento.preventDefault();
-        radioEls.forEach((elemento)=>{
-            if(elemento.checked){
-                query += `${elemento.value} `;
-            }
-        });
-        grid.filter((item)=> item.getElement().dataset.etiquetas.includes(query.toLowerCase()));
-        console.log(query);
-    });
-    btnBorrar.addEventListener('click', (evento)=>{
-        evento.preventDefault();
-        grid.filter((item)=> item.getElement().dataset.etiquetas.includes(''));
-        radioEls.forEach((elemento)=>{
-            if(elemento.checked){
-                elemento.checked = false;
-            }
-        });
-    });
-    //Filtrado por barra de busqueda
-    document.querySelector('#barra-busqueda').addEventListener('input', (evento)=>{
-        const busqueda = evento.target.value;
-        grid.filter((item)=> item.getElement().dataset.nombres.includes(busqueda.toLowerCase()));
-    })
-    grid.refreshItems();
+
 })
 
 addAnimals = function(cont){
@@ -62,7 +63,7 @@ addAnimals = function(cont){
         const animalDescription = document.createElement("div");
         const animalSpecie = document.createElement("p");
         const animalName = document.createElement("p");
-        let etiquetas = `${animal["Especie"]} ${animal["Tamanio"]} `;
+        let etiquetas = `${animal["Especie"]} ${animal["Tamano"]} `;
         etiquetas = etiquetas.toLowerCase();
         divAnimal.className = "item";
         divContent.className = "item-contenido";
