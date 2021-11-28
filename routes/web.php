@@ -14,7 +14,7 @@ use App\Http\Controllers\PagesController;
 |
 */
 
-Route::get('/', [PagesController::class, 'index']);
+Route::get('/', [PagesController::class, 'auth.login']);
 
 Route::get('index', [PagesController::class, 'index']);
 
@@ -27,3 +27,11 @@ Route::get('galeria', [PagesController::class, 'galeria']);
 Route::get('registro', [PagesController::class, 'registro']);
 
 Route::get('nosotros', [PagesController::class, 'nosotros']);
+
+Auth::routes();
+
+Route::get('/home', [PagesController::class, 'index'])->name('home');
+
+Route::group(['middleware' => 'auth'], function(){
+    Route::get('/', [PagesController::class, 'index'])->name('home');
+});

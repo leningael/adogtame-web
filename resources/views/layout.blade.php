@@ -16,6 +16,14 @@
     <header>
         <a href="{{ url('index') }} "><img src="{{ asset('img/logo.png') }}" alt="Logo perro y gato" class="logo-header"></a>
         <h1>ADOGTAME</h1>
+            <a style="color: black; text-decoration: none; background-color: #ff6363; position: fixed; right: 0; top: 0; z-index: 100;" href="{{ route('logout') }}"
+               onclick="event.preventDefault();
+                                                         document.getElementById('logout-form').submit();">
+                {{ __('Logout') }}
+            </a>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                @csrf
+            </form>
     </header>
     <nav>
         <ul class="nav-list">
