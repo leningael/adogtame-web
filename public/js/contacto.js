@@ -11,6 +11,3 @@ window.onload=function(){
     $form.addEventListener('submit', sendForm);
 
 }
-    
-    
-    

@@ -1,8 +1,6 @@
+const API_URL = "http://localhost/crudapi/public";
 let petsList = []
 window.addEventListener('load',() =>{
-
-    const API_URL = "http://localhost/crudapi/public";
-
     const xhr = new XMLHttpRequest();
     function onRequestHandler(){
         if(this.readyState === 4 && this.status === 200){
@@ -71,8 +69,7 @@ addAnimals = function(cont){
         animalDescription.className = "descripcion-mascota";
         divAnimal.setAttribute("data-nombres",`${animal["Nombre"].toLowerCase()}`);
         divAnimal.setAttribute("data-etiquetas",etiquetas);
-        animalImg.src = `${animal["Imagen"]}`;
-        //animalImg.src = "https://images.pexels.com/photos/8863636/pexels-photo-8863636.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+        animalImg.src = `${API_URL}${animal["Imagen"]}`;
         animalSpecie.innerHTML = `Especie: ${animal["Especie"]}`;
         animalName.innerHTML = `Nombre: ${animal["Nombre"]}`;
         divContent.appendChild(animalImg);
