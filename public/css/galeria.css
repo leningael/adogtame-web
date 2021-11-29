@@ -144,6 +144,7 @@ footer{
     vertical-align: top;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+    object-fit: contain;
 }
 
 .grid .descripcion-animal{
@@ -229,29 +230,42 @@ footer{
     justify-content: center;
     align-items: center;
     height: 100%;
+    width: 100%;
 }
 
 .detallesCompletos{
-    width: 90%;
+    width: 100%;
+    height: 100%;
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 10px;
 }
 
-.infoCompleta{
+/*.infoCompleta{
     flex: 1;
 }
 
 .imgDetalles{
     flex: 1;
     text-align: center;
+}*/
+
+.infoCompleta{
+    height: 60%;
+}
+
+.imgDetalles{
+    height: 40%;
+    text-align: center;
 }
 
 .detallesCompletos img{
-    width: 50%;
+    width: 100%;
     height: 100%;
+    object-fit: contain;
 }
 
 .close{
@@ -306,6 +320,17 @@ footer{
 
 /* */
 @media (min-width: 900px) {
+    .infoCompleta{
+        height: 100%;
+        width: 50%;
+    }
+
+    .imgDetalles{
+        height: 95%;
+        width: 50%;
+        text-align: center;
+    }
+
     .detallesCompletos img{
         width: 80%;
         height: 100%;
