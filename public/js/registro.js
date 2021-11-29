@@ -11,13 +11,26 @@ document.addEventListener("DOMContentLoaded", function (){
             xhr.open("POST", `${API_URL}/mascotas`, true);
             xhr.onreadystatechange = function (){
                 if(this.readyState === 4 && this.status === 200){
-                    alert("¡Los datos se han enviado con exito!");
+                    alert("¡Los datos de la mascota se han enviado con exito!");
                     document.getElementById("formulario").reset();
                 }
             }
 
             var formData = new FormData(document.getElementById('formulario'));
             xhr.send(formData);
+        });
+        document.getElementById("enviarUsuario").addEventListener("click", function (){
+            const xhrUsuario = new XMLHttpRequest();
+            xhrUsuario.open("POST", `${API_URL}/usuarios`, true);
+            xhrUsuario.onreadystatechange = function (){
+                if(this.readyState === 4 && this.status === 200){
+                    alert("¡Los datos del usuario se han enviado con exito!");
+                    document.getElementById("formularioUsuario").reset();
+                }
+            }
+
+            var formDataUsuario = new FormData(document.getElementById('formularioUsuario'));
+            xhrUsuario.send(formDataUsuario);
         });
     }
 });

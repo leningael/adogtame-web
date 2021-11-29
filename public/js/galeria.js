@@ -73,18 +73,34 @@ document.addEventListener("DOMContentLoaded", function (){
                     var mascota = petsList.filter(function (mascota){
                         return mascota.id==idDetalles[1];
                     });
-                    var contenido = "";
-                    contenido+=`<div class="detallesCompletos"><div class="infoCompleta"><h2>Detalles de ${mascota[0].Nombre}</h2>`;
-                    contenido+=`<p>Edad: ${mascota[0].Edad}</p>`;
-                    contenido+=`<p>Peso: ${mascota[0].Peso}</p>`;
-                    contenido+=`<p>Tamaño: ${mascota[0].Tamano}</p>`;
-                    contenido+=`<p>Especie: ${mascota[0].Especie}</p>`;
-                    contenido+=`<p>Raza: ${mascota[0].Raza}</p>`;
-                    contenido+=`<b>Contacto</b>`;
-                    contenido+=`<p>Dueño: ${mascota[0].NombreUsuario}</p><br>`;
-                    contenido+=`<b>Descripcion:</b><p class="descrip">${mascota[0].Descripcion}</p></div>`;
-                    contenido+=`<div class="imgDetalles"><img src="${API_URL}${mascota[0].Imagen}"></div></div>`;
-                    contenidoMascota.innerHTML=contenido;
+                    const xhrUsuario = new XMLHttpRequest();
+                    function onRequestHandlerUser(){
+                        if(this.readyState === 4 && this.status === 200){
+                            let usuario = JSON.parse(this.response);
+                            var contenido = "";
+                            contenido+=`<div class="detallesCompletos"><div class="infoCompleta"><h2>Detalles de ${mascota[0].Nombre}</h2>`;
+                            contenido+=`<p>Edad: ${mascota[0].Edad}</p>`;
+                            contenido+=`<p>Peso: ${mascota[0].Peso}</p>`;
+                            contenido+=`<p>Tamaño: ${mascota[0].Tamano}</p>`;
+                            contenido+=`<p>Especie: ${mascota[0].Especie}</p>`;
+                            contenido+=`<p>Raza: ${mascota[0].Raza}</p><br>`;
+                            contenido+=`<b>Detalles del contacto</b>`;
+                            if(typeof(usuario.NombreUsuario) == "undefined"){
+                                contenido+=`<p>No se ha proporcionado información de contacto para esta mascota.</p>
+                                            <p>Si le interesa comuniquese al siguiente número: 9832128157.</p><br>`;
+                            }else{
+                                contenido+=`<p>Nombre de usuario: ${usuario.NombreUsuario}</p>`;
+                                contenido+=`<p>Email: ${usuario.Email}</p>`;
+                                contenido+=`<p>Telefono: ${usuario.Telefono}</p><br>`;
+                            }
+                            contenido+=`<b>Descripcion:</b><p class="descrip">${mascota[0].Descripcion}</p></div>`;
+                            contenido+=`<div class="imgDetalles"><img src="${API_URL}${mascota[0].Imagen}"></div></div>`;
+                            contenidoMascota.innerHTML=contenido;
+                        }
+                    }
+                    xhrUsuario.addEventListener("load", onRequestHandlerUser);
+                    xhrUsuario.open("GET", `${API_URL}/usuarios/${mascota[0].NombreUsuario}`);
+                    xhrUsuario.send();
                 });
             }
         }

@@ -35,7 +35,7 @@
                 <br><p class="sendButton"><button type="button" id="enviar">Enviar</button></p>
             </form>
             <br><br><hr><br><br>
-            <form action="" class="formulario">
+            <form action="" class="formulario" id="formularioUsuario">
                 <h1>Datos Personales</h1><br>
                 <label for="nombreusuario">Nombre de usuario</label>
                 <p><input type="text" name="nombreusuario" id="username-usuario" placeholder="Escribe el nombre de usuario" required></p><br>
