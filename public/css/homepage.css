@@ -124,7 +124,7 @@ main{
     color: rgba(255, 255, 255, 0.6);
     background-color: rgba(0, 0, 0, 0.2);
     margin-bottom: 150px;
-    font-size: 35px;
+    font-size: 25px;
     font-weight: bold;
     letter-spacing: 20px;
     text-align: center;
@@ -289,6 +289,7 @@ body.dark-theme{
     background-color: transparent;
     border: none;
     cursor: pointer;
+
 }
 
 @media (min-width: 800px) {

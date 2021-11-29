@@ -1,6 +1,9 @@
 const API_URL = "http://localhost/crudapi/public";
 let petsList = []
-window.addEventListener('load',() =>{
+document.addEventListener("DOMContentLoaded", function (){
+    let modal = document.getElementById("modal");
+    let contenidoMascota = document.getElementById("contenidoMascota");
+    let modalC = document.getElementById("modal-container");
     const xhr = new XMLHttpRequest();
     function onRequestHandler(){
         if(this.readyState === 4 && this.status === 200){
@@ -23,7 +26,6 @@ window.addEventListener('load',() =>{
                     }
                 });
                 grid.filter((item)=> item.getElement().dataset.etiquetas.includes(query.toLowerCase()));
-                console.log(query);
             });
             btnBorrar.addEventListener('click', (evento)=>{
                 evento.preventDefault();
@@ -40,52 +42,138 @@ window.addEventListener('load',() =>{
                 grid.filter((item)=> item.getElement().dataset.nombres.includes(busqueda.toLowerCase()));
             })
             grid.refreshItems();
+
+            const btnsBorrar = document.querySelectorAll(".btnBorrar");
+            for(let i = 0; i < btnsBorrar.length; i++){
+                btnsBorrar[i].addEventListener("click", function (){
+                    var elem = document.getElementById(`animal${this.id}`);
+                    petsList.splice(this.id, 1);
+                    const xhr1 = new XMLHttpRequest();
+                    function onDeleteHandler(){
+                        if(this.readyState === 4 && this.status === 200){
+                            //console.log(this.response);
+                            elem.parentNode.removeChild(elem);
+                            grid.refreshItems().layout();
+                        }
+                    }
+                    xhr1.addEventListener("load", onDeleteHandler);
+                    xhr1.open("DELETE", `${API_URL}/mascotas/${this.id}`);
+                    xhr1.send();
+                });
+            }
+            const detallesMascotas = document.querySelectorAll(".img-mascota");
+            for(let i = 0; i < btnsBorrar.length; i++){
+                detallesMascotas[i].addEventListener("click", function (e){
+                    e.preventDefault();
+                    modalC.style.opacity="1";
+                    modalC.style.visibility="visible";
+                    modal.classList.toggle("modal-close");
+                    var idDetalles = this.id.split(".");
+                    //console.log(idDetalles[1])
+                    var mascota = petsList.filter(function (mascota){
+                        return mascota.id==idDetalles[1];
+                    });
+                    var contenido = "";
+                    contenido+=`<div class="detallesCompletos"><div class="infoCompleta"><h2>Detalles de ${mascota[0].Nombre}</h2>`;
+                    contenido+=`<p>Edad: ${mascota[0].Edad}</p>`;
+                    contenido+=`<p>Peso: ${mascota[0].Peso}</p>`;
+                    contenido+=`<p>Tamaño: ${mascota[0].Tamano}</p>`;
+                    contenido+=`<p>Especie: ${mascota[0].Especie}</p>`;
+                    contenido+=`<p>Raza: ${mascota[0].Raza}</p>`;
+                    contenido+=`<b>Contacto</b>`;
+                    contenido+=`<p>Dueño: ${mascota[0].NombreUsuario}</p><br>`;
+                    contenido+=`<b>Descripcion:</b><p class="descrip">${mascota[0].Descripcion}</p></div>`;
+                    contenido+=`<div class="imgDetalles"><img src="${API_URL}${mascota[0].Imagen}"></div></div>`;
+                    contenidoMascota.innerHTML=contenido;
+                });
+            }
         }
     }
 
     xhr.addEventListener("load", onRequestHandler);
     xhr.open("GET", `${API_URL}/mascotas`);
     xhr.send();
-    //////////////////cargarMascotas();
     const principalGrid = document.getElementById("grid");
     //Filtrado por checkboxes
     const radioEls = document.querySelectorAll('input[type="radio"]');
     const btnBuscar = document.getElementById("query-buscar");
     const btnBorrar = document.getElementById("borrar");
-
-})
+    let cerrar = document.getElementById("btnCerrar");
+    cerrar.addEventListener("click", function (){
+        modal.classList.toggle("modal-close");
+        setTimeout(function (){
+            modalC.style.opacity="0";
+            modalC.style.visibility="hidden";
+        }, 900);
+        contenidoMascota.innerHTML=``;
+    });
+    window.addEventListener("click", function (e){
+        if(e.target == modalC){
+            modal.classList.toggle("modal-close");
+            setTimeout(function (){
+                modalC.style.opacity="0";
+                modalC.style.visibility="hidden";
+            }, 600);
+        }
+    });
+});
 
 addAnimals = function(cont){
     petsList.forEach(animal => {
         const divAnimal = document.createElement("div");
         const divContent = document.createElement("div");
         const animalImg = document.createElement("img");
+        const footerContent = document.createElement("div");
         const animalDescription = document.createElement("div");
+        const divOpciones = document.createElement("div");
         const animalSpecie = document.createElement("p");
         const animalName = document.createElement("p");
+        const editar = document.createElement("img");
+        const vinculoEditar = document.createElement("a");
+        const borrar = document.createElement("img");
+        const vinculoBorrar = document.createElement("button");
         let etiquetas = `${animal["Especie"]} ${animal["Tamano"]} `;
         etiquetas = etiquetas.toLowerCase();
+        divAnimal.id=`animal${animal["id"]}`;
         divAnimal.className = "item";
         divContent.className = "item-contenido";
         animalDescription.className = "descripcion-mascota";
+        footerContent.className = "footerContent";
+        divOpciones.className = "btns-opciones";
+        animalImg.className = "img-mascota";
+        animalImg.id = `detalles.${animal["id"]}`
         divAnimal.setAttribute("data-nombres",`${animal["Nombre"].toLowerCase()}`);
         divAnimal.setAttribute("data-etiquetas",etiquetas);
         animalImg.src = `${API_URL}${animal["Imagen"]}`;
         animalSpecie.innerHTML = `Especie: ${animal["Especie"]}`;
         animalName.innerHTML = `Nombre: ${animal["Nombre"]}`;
+        editar.src = "/proyecto-web/public/img/editar.png";
+        vinculoEditar.className="btnEditar";
+        vinculoEditar.id=`editar.${animal["id"]}`;
+        vinculoEditar.setAttribute("href", `/proyecto-web/public/registro/${animal["id"]}`)
+        borrar.src = "/proyecto-web/public/img/borrar.png";
+        vinculoBorrar.className="btnBorrar";
+        vinculoBorrar.id=animal["id"];
         divContent.appendChild(animalImg);
         animalDescription.appendChild(animalSpecie);
         animalDescription.appendChild(animalName);
-        divContent.appendChild(animalDescription);
+        footerContent.appendChild(animalDescription);
+        vinculoEditar.appendChild(editar);
+        divOpciones.appendChild(vinculoEditar);
+        vinculoBorrar.appendChild(borrar);
+        divOpciones.appendChild(vinculoBorrar);
+        footerContent.appendChild(divOpciones);
+        divContent.appendChild(footerContent);
         divAnimal.appendChild(divContent);
         cont.appendChild(divAnimal);
     });
 }
 
 cargarParametros = function (grid){
-    let params = (new URL(document.location)).searchParams;
-    if(params.has("tipoMascota")){
-        const tipoMascota = params.get("tipoMascota");
+    var full_url = document.URL;
+    var url_array = full_url.split('/');
+    var tipoMascota = url_array[url_array.length-1];
+    if(tipoMascota !== "galeria"){
         grid.filter((item)=> item.getElement().dataset.etiquetas.includes(tipoMascota));
     }
 }

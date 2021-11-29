@@ -134,11 +134,10 @@ footer{
     position: relative;
     text-align: center;
     box-shadow: 1px 1px 10px 5px rgba(0,0,0,0.2);
-    cursor: pointer;
     border: 1px solid black;
 }
 
-.grid .item img{
+.grid .item .img-mascota{
     height: 200px;
     width: 100%;
     cursor: pointer;
@@ -181,8 +180,123 @@ footer{
     cursor: pointer;
 }
 
+.modal-container{
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal{
+    width: 80%;
+    height: 80%;
+    background: #fff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transition: transform 1s;
+    transform: translateY(0%);
+    border-radius: 10px;
+}
+
+.modal h2, b{
+    color: black;
+}
+
+.modal p{
+    color: black;
+    font-size: 9px;
+}
+
+
+.modal-close{
+    transform: translateY(-200%);
+}
+
+#contenidoMascota{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.detallesCompletos{
+    width: 90%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.infoCompleta{
+    flex: 1;
+}
+
+.imgDetalles{
+    flex: 1;
+    text-align: center;
+}
+
+.detallesCompletos img{
+    width: 50%;
+    height: 100%;
+}
+
+.close{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background: #c44a4a;
+    color: #fff;
+    line-height: 25px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.btns-opciones img{
+    width: 100%;
+    height: 100%;
+}
+
+.btnEditar{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+}
+
+.btns-opciones button{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin: 5px 10px;
+}
+
+.descrip{
+    font-size: 12px;
+    overflow-y: auto;
+    height: 100px;
+}
+
 @media (min-width: 580px) {
-    .grid .item img{
+    .grid .item .img-mascota{
         height: 300px;
     }
     .grid .descripcion-animal{
@@ -192,6 +306,22 @@ footer{
 
 /* */
 @media (min-width: 900px) {
+    .detallesCompletos img{
+        width: 80%;
+        height: 100%;
+    }
+    .detallesCompletos{
+        flex-direction: row;
+    }
+    .modal {
+        width: 60%;
+        height: 60%;
+    }
+
+    .modal p{
+        font-size: 13px;
+    }
+
     .contenedor-principal{
         grid-template-columns: 25% auto;
         grid-template-rows: max-content max-content auto max-content;
@@ -212,7 +342,7 @@ footer{
         width: calc(33.3333333% - 20px);
     }
 
-    .grid .item img{
+    .grid .item .img-mascota{
         height: 250px;
     }
     .grid .descripcion-animal{
@@ -221,7 +351,15 @@ footer{
 }
 
 @media (min-width: 1124px) {
-    .grid .item img{
+    .modal {
+        width: 60%;
+        height: 60%;
+    }
+
+    .modal p{
+        font-size: 15px;
+    }
+    .grid .item img-mascota{
         height: 300px;
     }
     .grid .descripcion-animal{

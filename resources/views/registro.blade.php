@@ -1,5 +1,5 @@
 @extends('layout')
-
+<link rel="stylesheet" href=" {{ asset('css/registro.css') }}">
 @section('content')
     <div class="contenido">
         <div class="divContenidoDerecho">
@@ -11,7 +11,7 @@
                 <p><input type="email" name="email" id="email" placeholder="Escribe tu email"  required ></p>
                 <br><label for="telefono">Teléfono</label>
                 <p><input type="tel" name="telefono" id="telefono" placeholder="Escribe tu teléfono" required></p>-->
-            <form action="http://localhost/crudapi/public/mascotas" id="formulario" method="post" enctype="multipart/form-data">
+            <form action="" id="formulario" method="post" enctype="multipart/form-data">
                 <br><h1>Datos de la Mascota</h1>
                 <br><label for="nombreusuario">Nombre de usuario</label>
                 <p><input type="text" name="nombreusuario" id="nombre-usuario" placeholder="Escribe el nombre de usuario" required></p>

@@ -1,5 +1,5 @@
 @extends('layout')
-
+<link rel="stylesheet" href=" {{ asset('css/galeria.css') }}">
 @section('sidecontent')
     <div class="sidebar">
         <h1>Filtros</h1>
@@ -41,4 +41,10 @@
 
 @section('content')
     <div class="grid" id="grid"></div>
+    <div class="modal-container" id="modal-container">
+        <div class="modal modal-close" id="modal">
+            <p class="close" id="btnCerrar">X</p>
+            <div id="contenidoMascota"></div>
+        </div>
+    </div>
 @endsection

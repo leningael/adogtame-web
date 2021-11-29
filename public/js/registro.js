@@ -1,19 +1,62 @@
 const API_URL = "http://localhost/crudapi/public";
 document.addEventListener("DOMContentLoaded", function (){
-    document.getElementById("enviar").addEventListener("click", function (){
-        const xhr = new XMLHttpRequest();
-        xhr.open("POST", `${API_URL}/mascotas`, true);
-        xhr.onreadystatechange = function (){
+    var full_url = document.URL;
+    var url_array = full_url.split('/');
+    var id = url_array[url_array.length-1];
+    if(id !== "registro"){
+        editarMascota(id);
+    }else{
+        document.getElementById("enviar").addEventListener("click", function (){
+            const xhr = new XMLHttpRequest();
+            xhr.open("POST", `${API_URL}/mascotas`, true);
+            xhr.onreadystatechange = function (){
+                if(this.readyState === 4 && this.status === 200){
+                    alert("¡Los datos se han enviado con exito!");
+                    document.getElementById("formulario").reset();
+                }
+            }
+
+            var formData = new FormData(document.getElementById('formulario'));
+            xhr.send(formData);
+        });
+    }
+});
+
+editarMascota = function (id){
+        const xhr1 = new XMLHttpRequest();
+        function onRequestHandler() {
+            if (this.readyState === 4 && this.status === 200) {
+                let mascota = JSON.parse(this.response);
+                llenarCampos(mascota);
+            }
+        }
+        xhr1.addEventListener("load", onRequestHandler);
+        xhr1.open("GET", `${API_URL}/mascotas/${id}`);
+        xhr1.send();
+}
+
+llenarCampos = function (mascota){
+    document.getElementById("nombre-usuario").value = mascota.NombreUsuario;
+    document.getElementById("nombre-mascota").value = mascota.Nombre;
+    document.getElementById("edad-mascota").value = mascota.Edad;
+    document.getElementById("peso-mascota").value = mascota.Peso;
+    document.getElementById("tamanio-mascota").value = mascota.Tamano;
+    document.getElementById("especie-mascota").value = mascota.Especie;
+    document.getElementById("raza-mascota").value = mascota.Raza;
+    document.getElementById("descripcion-mascota").value = mascota.Descripcion;
+    document.getElementById("enviar").addEventListener("click", function () {
+        const xhr1 = new XMLHttpRequest();
+        xhr1.open("POST", `${API_URL}/mascotas/${mascota.id}`, true);
+        xhr1.onreadystatechange = function (){
             if(this.readyState === 4 && this.status === 200){
-                alert("¡La mascota se ha registrado!");
-                document.getElementById("formulario").reset();
+                window.location.href="/proyecto-web/public/galeria";
             }
         }
 
         var formData = new FormData(document.getElementById('formulario'));
-        xhr.send(formData);
+        xhr1.send(formData);
     });
-});
+}
 /*document.addEventListener("DOMContentLoaded", function (){
     cargarLocalStorage();
     document.getElementById('enviar').onclick = function(){

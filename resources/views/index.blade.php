@@ -1,5 +1,5 @@
 @extends('layout')
-
+<link rel="stylesheet" href=" {{ asset('css/homepage.css') }}">
 @section('content')
     <div class="carrusel-contenedor">
         <a href="{{ url('galeria') }}">
@@ -39,7 +39,7 @@
     <section class="busqueda">
         <div class="formBusqueda">
             <span class="texto-info">Encuentra a tu nuevo mejor amigo</span>
-            <form action="public/galeria.html">
+            <form action="" id="formularioBuscar">
                 <label for="tipoMascota">Busco:</label>
                 <select name="tipoMascota" id="tipoMascota">
                     <option value="perro">Perro</option>
@@ -47,6 +47,7 @@
                 </select>
                 <input type="submit" value="Comenzar b&uacute;squeda" class="boton">
             </form>
+            <a href="" id="enviarTipo"></a>
         </div>
         <div class="imagen-busqueda">
             <img src="{{ asset('img/busqueda.png') }}" alt="Imagen con el tipo de mascotas">

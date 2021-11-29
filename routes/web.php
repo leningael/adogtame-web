@@ -16,19 +16,23 @@ use App\Http\Controllers\PagesController;
 
 Route::get('/', [PagesController::class, 'auth.login']);
 
-Route::get('index', [PagesController::class, 'index']);
+Route::get('index', [PagesController::class, 'index'])->middleware('auth');
 
-Route::get('contacto', [PagesController::class, 'contacto']);
+Route::get('contacto', [PagesController::class, 'contacto'])->middleware('auth');
 
-Route::get('blog', [PagesController::class, 'blog']);
+Route::get('blog', [PagesController::class, 'blog'])->middleware('auth');
 
-Route::get('galeria', [PagesController::class, 'galeria']);
+Route::get('galeria', [PagesController::class, 'galeria'])->middleware('auth');
 
-Route::get('registro', [PagesController::class, 'registro']);
+Route::get('galeria/{id}', [PagesController::class, 'galeria'])->middleware('auth');
 
-Route::get('nosotros', [PagesController::class, 'nosotros']);
+Route::get('registro', [PagesController::class, 'registro'])->middleware('auth');
 
-Auth::routes();
+Route::get('registro/{id}', [PagesController::class, 'registro'])->middleware('auth');
+
+Route::get('nosotros', [PagesController::class, 'nosotros'])->middleware('auth');
+
+Auth::routes(['register'=>false, 'reset'=>false]);
 
 Route::get('/home', [PagesController::class, 'index'])->name('home');
 
