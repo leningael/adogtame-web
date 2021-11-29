@@ -91,13 +91,13 @@ main{
    text-align: center;
 }
 
-#formulario{
+.formulario{
     text-align: left;
     width: 80%;
     margin: 0 auto;
 }
 
-#formulario input {
+.formulario input {
     width: 100%;
     height: 25px;
     border: none;
@@ -105,7 +105,7 @@ main{
     outline: none;
 }
 
-#formulario textarea{
+.formulario textarea{
     width: 100%;
     height: 130px;
     border: none;
@@ -114,7 +114,7 @@ main{
     resize: vertical;
 }
 
-#formulario .sendButton{
+.formulario .sendButton{
     text-align: center;
 }
 
