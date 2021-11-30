@@ -148,6 +148,8 @@ addAnimals = function(cont){
         const vinculoEditar = document.createElement("a");
         const borrar = document.createElement("img");
         const vinculoBorrar = document.createElement("button");
+        const imgDescargar = document.createElement("img");
+        const vinculoDescargar = document.createElement('a');
         let etiquetas = `${animal["Especie"]} ${animal["Tamano"]} `;
         etiquetas = etiquetas.toLowerCase();
         divAnimal.id=`animal${animal["id"]}`;
@@ -164,12 +166,16 @@ addAnimals = function(cont){
         animalSpecie.innerHTML = `Especie: ${animal["Especie"]}`;
         animalName.innerHTML = `Nombre: ${animal["Nombre"]}`;
         editar.src = "/proyecto-web/public/img/editar.png";
-        vinculoEditar.className="btnEditar";
+        vinculoEditar.className="vinculosOpciones";
         vinculoEditar.id=`editar.${animal["id"]}`;
         vinculoEditar.setAttribute("href", `/proyecto-web/public/registro/${animal["id"]}`)
         borrar.src = "/proyecto-web/public/img/borrar.png";
         vinculoBorrar.className="btnBorrar";
         vinculoBorrar.id=animal["id"];
+        imgDescargar.src = "/proyecto-web/public/img/descargar.png";
+        vinculoDescargar.className="vinculosOpciones";
+        vinculoDescargar.href = `${API_URL}${animal["Imagen"]}`;
+        vinculoDescargar.download = `mascota-${animal["Nombre"]}`;
         divContent.appendChild(animalImg);
         animalDescription.appendChild(animalSpecie);
         animalDescription.appendChild(animalName);
@@ -178,6 +184,8 @@ addAnimals = function(cont){
         divOpciones.appendChild(vinculoEditar);
         vinculoBorrar.appendChild(borrar);
         divOpciones.appendChild(vinculoBorrar);
+        vinculoDescargar.appendChild(imgDescargar);
+        divOpciones.appendChild(vinculoDescargar);
         footerContent.appendChild(divOpciones);
         divContent.appendChild(footerContent);
         divAnimal.appendChild(divContent);
