@@ -1,5 +1,5 @@
 @extends('layout')
-<link rel="stylesheet" href=" {{ asset('css/contacto.css') }}">
+
 @section('content')
     <div class="contenido">
         <div class="contenedorImagen">

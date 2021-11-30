@@ -1,5 +1,5 @@
 @extends('layout')
-<link rel="stylesheet" href=" {{ asset('css/blog.css') }}">
+
 @section('content')
     <div class="contenedorImagen">
         <p class="textoImagen">Bienvenido al blog</p>

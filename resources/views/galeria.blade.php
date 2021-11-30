@@ -1,5 +1,5 @@
 @extends('layout')
-<link rel="stylesheet" href=" {{ asset('css/galeria.css') }}">
+
 @section('sidecontent')
     <div class="sidebar">
         <h1>Filtros</h1>

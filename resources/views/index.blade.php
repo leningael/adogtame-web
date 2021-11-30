@@ -1,5 +1,5 @@
 @extends('layout')
-<link rel="stylesheet" href=" {{ asset('css/homepage.css') }}">
+
 @section('content')
     <div class="carrusel-contenedor">
         <a href="{{ url('galeria') }}">
