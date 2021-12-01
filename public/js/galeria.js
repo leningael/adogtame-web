@@ -4,6 +4,10 @@ document.addEventListener("DOMContentLoaded", function (){
     let modal = document.getElementById("modal");
     let contenidoMascota = document.getElementById("contenidoMascota");
     let modalC = document.getElementById("modal-container");
+    const principalGrid = document.getElementById("grid");
+    const radioEls = document.querySelectorAll('input[type="radio"]');
+    const btnBuscar = document.getElementById("query-buscar");
+    const btnBorrar = document.getElementById("borrar");
     const xhr = new XMLHttpRequest();
     function onRequestHandler(){
         if(this.readyState === 4 && this.status === 200){
@@ -26,6 +30,7 @@ document.addEventListener("DOMContentLoaded", function (){
                     }
                 });
                 grid.filter((item)=> item.getElement().dataset.etiquetas.includes(query.toLowerCase()));
+                grid.refreshItems().layout();
             });
             btnBorrar.addEventListener('click', (evento)=>{
                 evento.preventDefault();
@@ -35,13 +40,15 @@ document.addEventListener("DOMContentLoaded", function (){
                         elemento.checked = false;
                     }
                 });
+                grid.refreshItems().layout();
             });
             //Filtrado por barra de busqueda
             document.querySelector('#barra-busqueda').addEventListener('input', (evento)=>{
                 const busqueda = evento.target.value;
                 grid.filter((item)=> item.getElement().dataset.nombres.includes(busqueda.toLowerCase()));
+                grid.refreshItems().layout();
             })
-            grid.refreshItems();
+            grid.refreshItems().layout();
 
             const btnsBorrar = document.querySelectorAll(".btnBorrar");
             for(let i = 0; i < btnsBorrar.length; i++){
@@ -107,13 +114,9 @@ document.addEventListener("DOMContentLoaded", function (){
     }
 
     xhr.addEventListener("load", onRequestHandler);
-    xhr.open("GET", `${API_URL}/mascotas`);
+    xhr.open("GET", `${API_URL}/mascotas`, false);
     xhr.send();
-    const principalGrid = document.getElementById("grid");
     //Filtrado por checkboxes
-    const radioEls = document.querySelectorAll('input[type="radio"]');
-    const btnBuscar = document.getElementById("query-buscar");
-    const btnBorrar = document.getElementById("borrar");
     let cerrar = document.getElementById("btnCerrar");
     cerrar.addEventListener("click", function (){
         modal.classList.toggle("modal-close");
@@ -197,7 +200,7 @@ cargarParametros = function (grid){
     var full_url = document.URL;
     var url_array = full_url.split('/');
     var tipoMascota = url_array[url_array.length-1];
-    if(tipoMascota !== "galeria"){
+    if(tipoMascota !== "galeria" &&  !tipoMascota.includes("#")){
         grid.filter((item)=> item.getElement().dataset.etiquetas.includes(tipoMascota));
     }
 }

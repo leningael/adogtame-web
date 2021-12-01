@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function (){
             }
 
             var formData = new FormData(document.getElementById('formulario'));
-            enviarForm(formData);
+            enviarForm(formData, xhr);
         });
         document.getElementById("enviarUsuario").addEventListener("click", function (){
             const xhrUsuario = new XMLHttpRequest();
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function (){
             }
 
             var formDataUsuario = new FormData(document.getElementById('formularioUsuario'));
-            enviarForm(formDataUsuario);
+            enviarForm(formDataUsuario, xhrUsuario);
         });
     }
 });
@@ -71,7 +71,7 @@ llenarCampos = function (mascota){
     });
 }
 
-function enviarForm(formData){
+function enviarForm(formData, xhr){
     let iter = formData.entries();
     for(i of iter){
         if(typeof i[1] === 'string'){

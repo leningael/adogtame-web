@@ -2,7 +2,6 @@ const API_URL = "http://localhost/crudapi/public";
 let articulos = [];
 
 document.addEventListener("DOMContentLoaded", function (){
-    agregarCarrusel();
     const xhr = new XMLHttpRequest();
     function onRequestHandler(){
         if(this.readyState === 4 && this.status === 200){
@@ -33,34 +32,32 @@ desplegarArticulos = function (){
     document.getElementById("preview-blog").innerHTML=contenido;
 }
 
-agregarCarrusel = function (){
-    var slideIndex = 1;
-    showSlides(slideIndex);
+var slideIndex = 1;
+showSlides(slideIndex);
 
 // Next/previous controls
-    function plusSlides(n) {
-        showSlides(slideIndex += n);
-    }
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+}
 
 // Thumbnail image controls
-    function currentSlide(n) {
-        showSlides(slideIndex = n);
-    }
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+}
 
-    function showSlides(n) {
-        var i;
-        var slides = document.getElementsByClassName("carrusel-slides");
-        var dots = document.getElementsByClassName("puntos");
-        if (n > slides.length) {slideIndex = 1}
-        if (n < 1) {slideIndex = slides.length}
-        for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-        }
-        /*slideIndex++;*/
-        for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" active", "");
-        }
-        slides[slideIndex-1].style.display = "block";
-        dots[slideIndex-1].className += " active";
+function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("carrusel-slides");
+    var dots = document.getElementsByClassName("puntos");
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
     }
+    /*slideIndex++;*/
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " active";
 }

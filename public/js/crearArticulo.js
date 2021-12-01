@@ -1,7 +1,8 @@
 const API_URL = "http://localhost/crudapi/public";
-const xhr = new XMLHttpRequest();
+
 document.addEventListener("DOMContentLoaded", function (){
     document.getElementById("enviar").addEventListener("click", function (){
+        const xhr = new XMLHttpRequest();
         xhr.open("POST", `${API_URL}/articulos`, true);
         xhr.onreadystatechange = function (){
             if(this.readyState === 4 && this.status === 200){
@@ -10,11 +11,11 @@ document.addEventListener("DOMContentLoaded", function (){
             }
         }
         let formData = new FormData(document.getElementById('formulario'));
-        enviarForm(formData);
+        enviarForm(formData, xhr);
     });
 });
 
-function enviarForm(formData){
+function enviarForm(formData, xhr){
     let iter = formData.entries();
     for(i of iter){
         if(typeof i[1] === 'string'){
