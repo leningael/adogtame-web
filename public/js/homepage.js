@@ -20,11 +20,17 @@ document.addEventListener("DOMContentLoaded", function (){
         document.getElementById("enviarTipo").setAttribute('href', `/proyecto-web/public/galeria/${formData.get('tipoMascota')}`)
         document.getElementById("enviarTipo").click();
     });
-
 });
 
 desplegarArticulos = function (){
-    
+    var contenido = "";
+    articulos.forEach(articulo =>{
+        contenido+=`<a href="/proyecto-web/public/blog#articulo${articulo["id"]}">`;
+        contenido+="<article class='articulo'>";
+        contenido+=`<img class="imagen-articulo" src="${API_URL}${articulo["Imagen"]}">`;
+        contenido+=`<p class="titulo-articulo">${articulo["Titulo"]}</p></article></a>`;
+    });
+    document.getElementById("preview-blog").innerHTML=contenido;
 }
 
 agregarCarrusel = function (){

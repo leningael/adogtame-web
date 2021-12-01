@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function (){
         }
     }
     xhr.addEventListener("load", onRequestHandler);
-    xhr.open("GET", `${API_URL}/articulos`);
+    xhr.open("GET", `${API_URL}/articulos/recent_updates`, false);
     xhr.send();
     let cerrar = document.getElementById("btnCerrar");
     cerrar.addEventListener("click", function (){
