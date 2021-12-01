@@ -54,24 +54,5 @@
         </div>
     </section>
     <hr>
-    <section class="preview-blog" id="preview-blog">
-        <a href="{{ url('blog#articulo1') }}">
-            <article class="articulo">
-                <img class="imagen-articulo" src="https://www.purina-latam.com/sites/g/files/auxxlc391/files/styles/social_share_large/public/01_%C2%BFQu%C3%A9-puedo-hacer-si-mi-gato-est%C3%A1-triste-.png?itok=w67Nhubc" alt="Imagen Articulo 2">
-                <p class="titulo-articulo">¿Cómo interpretar a tu gatito?</p>
-            </article>
-        </a>
-        <a href="{{ url('blog#articulo2') }}">
-            <article class="articulo">
-                <img class="imagen-articulo" src="http://static.ella-hoy.es/r/845X0/www.ella-hoy.es/img/perrogat.jpg" alt="Imagen Articulo 3">
-                <p class="titulo-articulo">Aspectos a considerar antes de adoptar</p>
-            </article>
-        </a>
-        <a href="{{ url('blog#articulo3') }}">
-            <article class="articulo">
-                <img class="imagen-articulo" src="https://perro.shop/wp-content/uploads/pug.jpg" alt="Imagen Articulo 1">
-                <p class="titulo-articulo">10 consejos para cuidar a tu cachorro</p>
-            </article>
-        </a>
-    </section>
+    <section class="preview-blog" id="preview-blog"></section>
 @endsection
