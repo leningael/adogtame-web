@@ -182,7 +182,7 @@ crearGridItem = function (cont, animal){
     etiquetas = etiquetas.toLowerCase();
     divAnimal.setAttribute("data-nombres",`${animal["Nombre"].toLowerCase()}`);
     divAnimal.setAttribute("data-etiquetas",etiquetas);
-    asignarContenido();
+    asignarContenido(divAnimal, animal);
     cont.appendChild(divAnimal);
 }
 
