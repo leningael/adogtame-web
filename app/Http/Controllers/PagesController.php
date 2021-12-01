@@ -19,6 +19,10 @@ class PagesController extends Controller
         return view('blog')->with('mensaje', 'blog');
     }
 
+    public function crearArticulo(){
+        return view('crearArticulo')->with('mensaje', 'crearArticulo');
+    }
+
     public function galeria(){
         return view('galeria')->with('mensaje', 'galeria');
     }

@@ -22,6 +22,8 @@ Route::get('contacto', [PagesController::class, 'contacto'])->middleware('auth')
 
 Route::get('blog', [PagesController::class, 'blog'])->middleware('auth');
 
+Route::get('crearArticulo', [PagesController::class, 'crearArticulo'])->middleware('auth');
+
 Route::get('galeria', [PagesController::class, 'galeria'])->middleware('auth');
 
 Route::get('galeria/{id}', [PagesController::class, 'galeria'])->middleware('auth');
@@ -31,6 +33,7 @@ Route::get('registro', [PagesController::class, 'registro'])->middleware('auth')
 Route::get('registro/{id}', [PagesController::class, 'registro'])->middleware('auth');
 
 Route::get('nosotros', [PagesController::class, 'nosotros'])->middleware('auth');
+
 
 Auth::routes(['register'=>false, 'reset'=>false]);
 

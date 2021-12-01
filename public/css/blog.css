@@ -90,7 +90,7 @@ main{
 .divForm {
     width: 80%;
     text-align: center;
-    padding: 50px 0;
+    padding: 20px 0;
     margin: 0 auto;
 }
 
@@ -99,35 +99,16 @@ main{
    text-align: center;
 }
 
-#formulario{
-    text-align: left;
-    width: 80%;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#formulario input {
-    width: 100%;
-    height: 25px;
-    border: 2px solid rgb(85, 82, 82);
-    outline: none;
+#crearArticulo{
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    background-color: rgb(236, 190, 180);
     border-radius: 5px;
-    margin: 10px 0;
-}
-
-#formulario .sendButton{
-    text-align: center;
-}
-
-#formulario select{
-    margin-top: 5px;
-    margin-bottom: 5px;
-    width: 100%;
-    height: 25px;
-    border: 2px solid rgb(85, 82, 82);
-    border-radius: 5px;
+    width: 40%;
+    height: 35px;
+    line-height: 35px;
+    margin: 20px 0;
 }
 
 .btnArticulos{

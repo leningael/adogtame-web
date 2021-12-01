@@ -6,17 +6,8 @@
         <img src="{{ asset('img/perroLector.jpeg') }}">
     </div>
     <div class="divForm">
-        <h1>Buscar</h1>
-        <form id="formulario">
-            <input type="text" name="busqueda" id="busqueda" placeholder="Buscar...">
-            <select name="tamanio-mascota" id="tamanio-mascota" required>
-                <option value="donaciones">Donaciones</option>
-                <option value="campanias">Campañas</option>
-                <option value="tips">Tips</option>
-                <option value="foros">Foros</option>
-            </select>
-            <button type="submit" name="enviar" id="enviar" class="btnArticulos">Buscar</button>
-        </form>
+        <h1>¡Crea tu propio articulo para el blog!</h1>
+        <a href="{{ url('crearArticulo') }}" class="crearArticulo" id="crearArticulo">Crear el tuyo</a>
     </div>
     <section class="lista-articulos">
         <article class="articulo-blog" id="articulo1">

@@ -55,9 +55,10 @@
                 <p><input type="text" name="municipio" id="municipio-usuario" placeholder="Escribe tu municipio" required></p>
                 <br><p class="sendButton"><button type="button" id="enviarUsuario">Enviar</button></p>
             </form>
+            <a href="" id="btnRedirect"></a>
         </div>
         <div class="contenedorImagen">
             <img src="{{ asset('img/registroImag.png') }}">
         </div>
     </div>
-@endsection
+    @endsection
