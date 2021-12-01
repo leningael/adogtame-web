@@ -6,34 +6,42 @@ document.addEventListener("DOMContentLoaded", function (){
     if(id !== "registro"){
         editarMascota(id);
     }else{
-        document.getElementById("enviar").addEventListener("click", function (){
-            const xhr = new XMLHttpRequest();
-            xhr.open("POST", `${API_URL}/mascotas`, true);
-            xhr.onreadystatechange = function (){
-                if(this.readyState === 4 && this.status === 200){
-                    alert("¡Los datos de la mascota se han enviado con exito!");
-                    document.getElementById("formulario").reset();
-                }
-            }
-
-            var formData = new FormData(document.getElementById('formulario'));
-            enviarForm(formData, xhr);
-        });
-        document.getElementById("enviarUsuario").addEventListener("click", function (){
-            const xhrUsuario = new XMLHttpRequest();
-            xhrUsuario.open("POST", `${API_URL}/usuarios`, true);
-            xhrUsuario.onreadystatechange = function (){
-                if(this.readyState === 4 && this.status === 200){
-                    alert("¡Los datos del usuario se han enviado con exito!");
-                    document.getElementById("formularioUsuario").reset();
-                }
-            }
-
-            var formDataUsuario = new FormData(document.getElementById('formularioUsuario'));
-            enviarForm(formDataUsuario, xhrUsuario);
-        });
+        registrarMascota();
+        registrarUsuario();
     }
 });
+
+registrarMascota = function(){
+    document.getElementById("enviar").addEventListener("click", function (){
+        const xhr = new XMLHttpRequest();
+        xhr.open("POST", `${API_URL}/mascotas`, true);
+        xhr.onreadystatechange = function (){
+            if(this.readyState === 4 && this.status === 200){
+                alert("¡Los datos de la mascota se han enviado con exito!");
+                document.getElementById("formulario").reset();
+            }
+        }
+
+        var formData = new FormData(document.getElementById('formulario'));
+        enviarForm(formData, xhr);
+    });
+}
+
+registrarUsuario = function (){
+    document.getElementById("enviarUsuario").addEventListener("click", function (){
+        const xhrUsuario = new XMLHttpRequest();
+        xhrUsuario.open("POST", `${API_URL}/usuarios`, true);
+        xhrUsuario.onreadystatechange = function (){
+            if(this.readyState === 4 && this.status === 200){
+                alert("¡Los datos del usuario se han enviado con exito!");
+                document.getElementById("formularioUsuario").reset();
+            }
+        }
+
+        var formDataUsuario = new FormData(document.getElementById('formularioUsuario'));
+        enviarForm(formDataUsuario, xhrUsuario);
+    });
+}
 
 editarMascota = function (id){
         const xhr1 = new XMLHttpRequest();
@@ -67,7 +75,7 @@ llenarCampos = function (mascota){
         }
 
         var formData = new FormData(document.getElementById('formulario'));
-        xhr1.send(formData);
+        enviarForm(formData, xhr1)
     });
 }
 

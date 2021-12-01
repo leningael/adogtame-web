@@ -3,18 +3,22 @@ let articulos = [];
 document.addEventListener("DOMContentLoaded", function (){
     let modal = document.getElementById("modal");
     let modalC = document.getElementById("modal-container");
-    let detallesArticulo = document.getElementById("detallesArticulo");
     const xhr = new XMLHttpRequest();
     function onRequestHandler(){
         if(this.readyState === 4 && this.status === 200){
             articulos = JSON.parse(this.response);
             desplegarArticulos();
-            desplegarModal(modal, modalC, detallesArticulo);
+            desplegarModal(modal, modalC);
         }
     }
     xhr.addEventListener("load", onRequestHandler);
     xhr.open("GET", `${API_URL}/articulos/recent_updates`, false);
     xhr.send();
+    btnCerrarModal(modal, modalC);
+    cerrarModalFuera(modal, modalC);
+});
+
+btnCerrarModal = function (modal, modalC){
     let cerrar = document.getElementById("btnCerrar");
     cerrar.addEventListener("click", function (){
         modal.classList.toggle("modal-close");
@@ -22,10 +26,13 @@ document.addEventListener("DOMContentLoaded", function (){
             modalC.style.opacity="0";
             modalC.style.visibility="hidden";
         }, 900);
-        detallesArticulo.innerHTML=``;
+        document.getElementById("detallesArticulo").innerHTML=``;
     });
+}
+
+cerrarModalFuera = function (modal, modalC){
     window.addEventListener("click", function (e){
-        if(e.target == modalC){
+        if(e.target === modalC){
             modal.classList.toggle("modal-close");
             setTimeout(function (){
                 modalC.style.opacity="0";
@@ -33,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function (){
             }, 600);
         }
     });
-});
+}
 
 desplegarArticulos = function (){
     var contenido = "";
@@ -48,6 +55,10 @@ desplegarArticulos = function (){
         contenido+="</div></article>";
     });
     document.getElementById("lista-articulos").innerHTML=contenido;
+    btnsBorrarArticulo();
+}
+
+btnsBorrarArticulo = function (){
     const btnsBorrar = document.querySelectorAll(".btnBorrar");
     for(let i = 0; i < btnsBorrar.length; i++){
         btnsBorrar[i].addEventListener("click", function (){
@@ -76,7 +87,7 @@ desplegarModal = function (modal, modalC, detallesArticulo){
             modal.classList.toggle("modal-close");
             var idDetalles = this.id.split(".");
             var articulo = articulos.filter(function (articulo){
-                return articulo.id==idDetalles[1];
+                return articulo.id===idDetalles[1];
             });
             var detalles = "";
             detalles+="<div class='informacionArticulo'>";
@@ -84,7 +95,7 @@ desplegarModal = function (modal, modalC, detallesArticulo){
             detalles+=`<p><b>Autor:</b> ${articulo[0].Autor}</p>`;
             detalles+=`<p><b>Año:</b> ${articulo[0].Anio}</p></div>`;
             detalles+=`<p class="contenidoArticulo">${articulo[0].Contenido}</p>`;
-            detallesArticulo.innerHTML=detalles;
+            document.getElementById("detallesArticulo").innerHTML=detalles;
         });
     }
 }

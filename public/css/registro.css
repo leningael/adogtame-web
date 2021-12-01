@@ -103,6 +103,10 @@ main{
     color: black;
 }
 
+.formulario input[type=file]{
+    color: black;
+}
+
 .formulario input {
     width: 100%;
     height: 25px;
