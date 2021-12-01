@@ -107,13 +107,15 @@ main{
     resize: vertical;
 }
 
-.form-crear input[type=submit]{
+.form-crear button{
     background-color: #ff6363;
     width: 40%;
     color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    margin: 15px auto;
+    padding: 5px;
 }
 
 

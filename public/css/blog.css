@@ -115,11 +115,11 @@ main{
     font-size: 17px;
     border-radius: 5px;
     border: none;
-    height: 35px;
     width: 60%;
     background-color: rgb(236, 190, 180);
     cursor: pointer;
-    margin: 10px 0;
+    margin: 5px 0;
+    padding: 5px 0;
 }
 
 .lista-articulos{
@@ -131,7 +131,7 @@ main{
     display: flex;
     align-items: center;
     flex-direction: column;
-    background-color: antiquewhite;
+    background-color: #fde4c4;
     width: 100%;
     border: 2px solid black;
     border-radius: 20px;
@@ -139,12 +139,12 @@ main{
     margin: 20px auto;
 }
 
-.articulo-blog img{
+.imgBlog{
     padding: 10px;
     width: 100%;
     border-radius: 20px;
     height: 250px;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .info-articulo{
@@ -161,6 +161,114 @@ main{
 .info-articulo p, h3{
     color: black;
     text-align: justify;
+}
+
+.modal-container{
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal{
+    width: 80%;
+    height: 80%;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transition: transform 1s;
+    transform: translateY(0%);
+    border-radius: 10px;
+}
+
+.modal h2, b{
+    color: black;
+}
+
+.modal-close{
+    transform: translateY(-200%);
+}
+
+.close{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background: #c44a4a;
+    color: #fff;
+    line-height: 25px;
+    cursor: pointer;
+    border-radius: 50%;
+    text-align: center;
+}
+
+#detallesArticulo{
+    height: 90%;
+    width: 90%;
+}
+
+#detallesArticulo p{
+    color: black;
+}
+
+.informacionArticulo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 25%;
+}
+
+.informacionArticulo h1{
+    color: #ff6363;
+}
+
+.informacionArticulo p{
+    font-size: 14px;
+}
+
+.opcionesArticulo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+.btnBorrar{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin: 0 10px;
+}
+
+.btnBorrar img{
+    width: 100%;
+    height: 100%;
+}
+
+.contenidoArticulo{
+    padding: 10px 0;
+    height: 75%;
+    overflow-wrap: break-word;
+    overflow-y: auto;
+    font-size: 14px;
 }
 
 footer{
@@ -184,9 +292,6 @@ footer{
 }
 
 @media (min-width: 700px){
-    .divForm {
-        width: 50%;
-    }
     .textoImagen{
         font-size: 60px;
     }
@@ -194,9 +299,18 @@ footer{
         flex-direction: row;
         width: 100%;
     }
-    .articulo-blog img{
-        width: 250px;
+    .imgBlog{
+        width: 30%;
     }
+    .informacionArticulo p{
+        font-size: 16px;
+    }
+    /*.informacionArticulo{
+        height: 20%;
+    }
+    .contenidoArticulo{
+        height: 80%;
+    }*/
 }
 
 

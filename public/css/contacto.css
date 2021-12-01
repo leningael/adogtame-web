@@ -88,10 +88,15 @@ main{
     border-radius: 10px;
     padding: 50px 0;
     border: 1px solid rgb(105, 97, 97);
+    background-color: antiquewhite;
 }
 
 .divContenidoDerecho  h1{
-   color: #ff6363; 
+   color: #ff6363;
+}
+
+.divContenidoDerecho label{
+    color: black;
 }
 
 #formulario{
@@ -106,6 +111,7 @@ main{
     border: none;
     border-bottom: 1px solid rgb(85, 82, 82);
     outline: none;
+    background-color: antiquewhite;
 }
 
 #formulario textarea{
@@ -115,6 +121,7 @@ main{
     border-bottom: 1px solid rgb(85, 82, 82);
     outline: none;
     resize: vertical;
+    background-color: antiquewhite;
 }
 
 #formulario .sendButton{

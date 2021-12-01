@@ -1,5 +1,5 @@
 const API_URL = "http://localhost/crudapi/public";
-let petsList = []
+let petsList = [];
 document.addEventListener("DOMContentLoaded", function (){
     let modal = document.getElementById("modal");
     let contenidoMascota = document.getElementById("contenidoMascota");
@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function (){
                 });
             }
             const detallesMascotas = document.querySelectorAll(".img-mascota");
-            for(let i = 0; i < btnsBorrar.length; i++){
+            for(let i = 0; i < detallesMascotas.length; i++){
                 detallesMascotas[i].addEventListener("click", function (e){
                     e.preventDefault();
                     modalC.style.opacity="1";

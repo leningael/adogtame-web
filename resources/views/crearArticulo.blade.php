@@ -10,7 +10,7 @@
             <textarea name="resumen" rows="2" placeholder="Resumen"></textarea>
             <textarea placeholder="Contenido" name="contenido"  rows="10" required></textarea>
             <input type="file" name="imagen">
-            <input type="submit" value="Enviar">
+            <button type="button" id="enviar">Enviar</button>
         </form>
     </div>
 @endsection
