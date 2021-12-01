@@ -87,7 +87,7 @@ desplegarModal = function (modal, modalC, detallesArticulo){
             modal.classList.toggle("modal-close");
             var idDetalles = this.id.split(".");
             var articulo = articulos.filter(function (articulo){
-                return articulo.id===idDetalles[1];
+                return articulo.id==idDetalles[1];
             });
             var detalles = "";
             detalles+="<div class='informacionArticulo'>";

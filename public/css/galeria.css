@@ -215,7 +215,7 @@ footer{
     color: black;
 }
 
-.modal p{
+.detallesCompletos p{
     color: black;
     font-size: 9px;
 }
@@ -243,15 +243,6 @@ footer{
     align-items: center;
     gap: 10px;
 }
-
-/*.infoCompleta{
-    flex: 1;
-}
-
-.imgDetalles{
-    flex: 1;
-    text-align: center;
-}*/
 
 .infoCompleta{
     height: 60%;

@@ -105,7 +105,7 @@ activarInfoMascota = function (modal, modalC){
             modal.classList.toggle("modal-close");
             var idDetalles = this.id.split(".");
             var mascota = petsList.filter(function (mascota){
-                return mascota.id===idDetalles[1];
+                return mascota.id==idDetalles[1];
             });
             const xhrUsuario = new XMLHttpRequest();
             function onRequestHandlerUser(){
