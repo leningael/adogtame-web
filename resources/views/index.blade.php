@@ -53,6 +53,7 @@
             <img src="{{ asset('img/busqueda.png') }}" alt="Imagen con el tipo de mascotas">
         </div>
     </section>
+    <div class="pagebreak"> </div>
     <hr>
     <section class="preview-blog" id="preview-blog"></section>
 @endsection

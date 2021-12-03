@@ -15,6 +15,7 @@
                 y facilitar las posibilidades de ingreso para nuevos rescatados.</p>
         </div>
     </div>
+    <div class="pagebreak"> </div>
     <div class="divContenidoIzquierdo">
         <h1>¿Por qué adoptar?</h1><br>
         <p>Todos los animales necesitan una segunda oportunidad.

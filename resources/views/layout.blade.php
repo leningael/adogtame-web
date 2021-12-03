@@ -36,6 +36,7 @@
     </nav>
     @yield('sidecontent')
     <main>
+        <p class="url-sitio">Puede consultar esta página en la url <a href="https://github.com/leningael/adogtame-web">https://github.com/leningael/adogtame-webp</a></p>
         @yield('content')
     </main>
     <footer>

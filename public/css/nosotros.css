@@ -139,6 +139,46 @@ footer{
     padding: 10px;
 }
 
+.url-sitio{
+    display: none;
+}
+
+
+@media print {
+    .url-sitio{
+        display: block;
+    }
+
+    nav{
+        display: none;
+    }
+
+    footer{
+        display: none;
+    }
+
+    .contenedorImagen{
+        display: none;
+    }
+    .contenedorImagen img{
+        display: none;
+    }
+
+    .pagebreak { page-break-before: always; }
+
+    .contenido{
+        display: block;
+    }
+
+    .contenedor-principal{
+        grid-template-rows: max-content auto;
+        grid-template-areas:
+        "header"
+        "main"
+    }
+}
+
+
 @media (min-width: 800px){
     .contenido{
         display: flex;

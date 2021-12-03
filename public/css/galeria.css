@@ -300,6 +300,72 @@ footer{
     height: 100px;
 }
 
+.url-sitio{
+    display: none;
+}
+
+@media print {
+    .url-sitio{
+        display: block;
+    }
+
+    grid{
+        break-inside: avoid;
+    }
+
+    .grid .item{
+        width: 50%;
+        break-inside: avoid;
+
+    }
+    .grid .item-contenido{
+        width: 50%;
+        border: none;
+        box-shadow: none;
+        break-inside: avoid;
+
+    }
+
+    .img-mascota{
+        display: block;
+        break-inside: avoid;
+    }
+
+    .vinculosOpciones{
+        display: none;
+    }
+
+    .btnBorrar{
+        visibility: hidden;
+    }
+
+    .vinculosOpciones button{
+        display: none;
+    }
+
+    .sidebar{
+        display: none;
+    }
+
+    nav{
+        display: none;
+    }
+
+    footer{
+        display: none;
+    }
+
+    .contenedor-principal{
+        grid-template-rows: max-content auto;
+        grid-template-areas:
+        "header"
+        "main"
+    }
+
+
+}
+
+
 @media (min-width: 580px) {
     .grid .item .img-mascota{
         height: 300px;

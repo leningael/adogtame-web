@@ -292,6 +292,36 @@ footer{
     padding: 10px;
 }
 
+.url-sitio{
+    display: none;
+}
+
+@media print {
+    .url-sitio{
+        display: block;
+    }
+
+    .articulo-blog{
+        page-break-before: always;
+    }
+
+    nav{
+        display: none;
+    }
+
+    footer{
+        display: none;
+    }
+
+    .contenedor-principal{
+        grid-template-rows: max-content auto;
+        grid-template-areas:
+        "header"
+        "main"
+    }
+}
+
+
 @media (min-width: 700px){
     .textoImagen{
         font-size: 60px;
