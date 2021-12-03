@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function (){
             activarBusqueda(grid);
             activarBorradoFiltros(grid);
             busquedaPorNombre(grid);
-            btnsBorrarMascota();
+            btnsBorrarMascota(grid);
             activarInfoMascota(modal, modalC);
         }
     }
@@ -74,7 +74,7 @@ busquedaPorNombre = function (grid){
     });
 }
 
-btnsBorrarMascota = function (){
+btnsBorrarMascota = function (grid){
     const btnsBorrar = document.querySelectorAll(".btnBorrar");
     for(let i = 0; i < btnsBorrar.length; i++){
         btnsBorrar[i].addEventListener("click", function (){

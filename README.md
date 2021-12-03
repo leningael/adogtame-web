@@ -1,5 +1,6 @@
 # Proyecto de Desarrollo de Aplicaciones Web   
-Para realizar las operaciones básicas(CRUD) este proyecto utiliza el servicio web [crudapi-adogtame](https://github.com/leningael/crudapi-adogtame)  
+Si desea ver un video mostrando el funcionamiento de la página [presione aquí](https://youtu.be/YIu2gr2dppg).   
+Para realizar las operaciones básicas(CRUD) este proyecto utiliza el servicio web [crudapi-adogtame](https://github.com/leningael/crudapi-adogtame) 
 ## Miembros del equipo
 | Nombre | Perfil | Foto |
 | -- | -- | -- |
